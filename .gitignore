@@ -9,3 +9,4 @@ parts/
 
 # Video hasil render ulang disimpan di video/, bukan di aset/
 aset/*/output/*.mp4
+__pycache__/
