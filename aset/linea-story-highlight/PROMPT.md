@@ -93,19 +93,21 @@ Teks di bawah adalah teks yang **tampil di layar**. Bagian dalam kurung adalah a
 
 ### Highlight 2 — Layanan
 
+Fokus ke empat hal yang paling dicari usaha: website F&B, kasir, dashboard, dan web app. Tidak ada layanan AI.
+
 1. **"Bisa bikin apa saja?"** (Empat kartu layanan berputar masuk.)
-2. **"01 · Website peluncuran"**
-   *Halaman cepat dan tajam untuk produk, kampanye, atau profil usaha.*
-   Label: strategi · susunan copy · animasi
-3. **"02 · Pemesanan & booking"**
-   *Pesan, jadwal, bayar, dan panel admin yang sesuai cara usahamu berjalan.*
-   Label: pembayaran · stok · otomatisasi
-4. **"03 · Sistem internal"**
-   *Dashboard dan sistem operasional pengganti spreadsheet berserakan dan chat yang tercecer.*
-   Label: peran akun · laporan · database
-5. **"04 · Sistem AI"**
-   *Asisten & integrasi AI yang jelas batasnya, tetap ada manusia saat dibutuhkan.*
-   Label: LLM · alur kerja · integrasi
+2. **"01 · Website & pemesanan F&B"**
+   *Menu digital, pesan dari HP atau langsung dari meja, bayar QRIS, dan kuota dapur per hari.*
+   Label: menu digital · QR meja · QRIS
+3. **"02 · Sistem kasir"**
+   *Transaksi cepat, cetak struk, stok berkurang otomatis, dan tutup kasir tiap hari. Tetap jalan tanpa internet.*
+   Label: struk · stok · bisa offline
+4. **"03 · Dashboard usaha"**
+   *Penjualan, stok, dan kinerja karyawan dalam satu layar. Laporan siap diunduh ke Excel.*
+   Label: laporan · akun karyawan · Excel
+5. **"04 · Web app"**
+   *Sistem web sesuai alur kerja usahamu: booking, katalog, sampai operasional. Buka dari HP atau laptop, tanpa install.*
+   Label: booking · katalog · operasional
    (Animasi penutup logo.)
 
 ### Highlight 3 — Karya
@@ -173,7 +175,7 @@ Setiap proyek digambar ulang sebagai **ilustrasi/mockup baru**, bukan screenshot
 | Identitas | Linea JS — studio web independen, satu orang, dari Indonesia. "Websites that keep business moving." |
 | Prinsip | No page builders. No mystery retainers. No vanishing after launch. |
 | Angka | 10+ projects shipped · 2 years building · 98 average Lighthouse · <6h typical reply |
-| Layanan | Launch sites · Commerce & booking · Internal tools · AI systems |
+| Layanan (di video) | Website & pemesanan F&B · Sistem kasir · Dashboard usaha · Web app |
 | Proses | Send the brief → I reply with a direction (1 hari kerja) → We align for 30 minutes → You get the fixed plan |
 | Kepemilikan | Repository, domain, database, akun, desain, dokumentasi diserahkan |
 | Waktu | Landing page 1–2 minggu. Produk dengan akun/pembayaran 4–8 minggu |
