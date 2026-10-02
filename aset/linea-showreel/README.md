@@ -2,7 +2,7 @@
 
 > Aplikasi/website yang direkam ada di repo **linea.js**. Skrip `capture.js` mengharapkan repo itu di-clone bersebelahan dengan repo ini (`../linea.js`).
 
-A 30-second showreel for the studio, made from real screenshots of this site plus the project images in `public/projects/gallery`. Music and sound effects are generated in code, so there are no licensing issues.
+A 30-second showreel for the studio, made from real screenshots of this site plus the project images from the site's `public/projects/gallery`, with client names and logos blurred (`blur-gallery.sh` → `gallery/`). The video shows no client brand names. Music and sound effects are generated in code, so there are no licensing issues.
 
 | File | Size | For |
 |---|---|---|
@@ -16,15 +16,15 @@ Every video carries the **Linea.js corner watermark** from the first frame (bott
 | Seconds | Scene |
 |---|---|
 | 0–3.6 | Type slam on ink: *"Your business deserves a site that works."* with the INTERFACES + APIS + DATABASES ticker |
-| 3.6–9 | The site in a browser and a phone: hero, studio idea, selected work |
-| 9–14.6 | *"Built for the real world."* — the six project cards land one by one (01/06 → 06/06) |
+| 3.6–9 | The site in a browser and a phone: hero, studio idea, services |
+| 9–14.6 | *"Built for the real world."* — five project cards land one by one (01/05 → 05/05), named by the kind of system, not by client |
 | 14.6–19.4 | *"From first click to last detail."* — the four services light up in lime |
 | 19.4–24.6 | *"Price before the surprise."* — the five starting prices, Custom app marked best value |
 | 24.6–30 | Lime CTA: *"Got an idea? Let's make the first move."*, **Start a project ↗**, the cat |
 
 ## Change the text and render again
 
-All copy is at the top of the `<script>` in [stage.html](stage.html): `CONFIG` (opening lines, CTA), `PROJECTS`, `SERVICES` and `PACKAGES`. Keep them in step with `app/page.tsx` when prices or projects change.
+All copy is at the top of the `<script>` in [stage.html](stage.html): `CONFIG` (opening lines, CTA), `PROJECTS`, `SERVICES` and `PACKAGES`. Keep services and prices in step with `app/page.tsx`; keep project names generic (no client brands).
 
 ```bash
 cd linea-showreel
@@ -46,6 +46,8 @@ BASE_URL=http://localhost:3500 node capture.js                             # thi
 
 Impact is not installed on Linux, so `capture.js` serves **Anton** (a close Google Font, `fonts/`) under the name Impact; Arial falls back to Liberation Sans, which has the same metrics. On Windows or macOS the real fonts are used.
 
+If the project images on the site change, run `sh blur-gallery.sh` again and check `gallery/` by eye: the blur regions are pixel boxes per image.
+
 ## Files
 
 | File | Purpose |
@@ -56,5 +58,7 @@ Impact is not installed on Linux, so `capture.js` serves **Anton** (a close Goog
 | `capture.js` | Screenshots of the running site |
 | `build.sh` | Audio + frames + ffmpeg encode |
 | `shots/` | Site screenshots used in the video |
+| `blur-gallery.sh` | Copies the project images from the site and blurs client names and logos |
+| `gallery/` | Those blurred project images |
 | `fonts/` | Anton, standing in for Impact |
 | `output/` | Finished videos |

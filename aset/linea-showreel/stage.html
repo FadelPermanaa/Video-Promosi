@@ -126,7 +126,7 @@ body.v #logo-dot { left: 60px; top: 90px; }
     <div class="view">
       <img src="shots/l-hero.png" alt="">
       <img id="v2" src="shots/l-studio.png" alt="">
-      <img id="v3" src="shots/l-work.png" alt="">
+      <img id="v3" src="shots/l-services.png" alt="">
     </div>
   </div>
   <div id="phone" class="phone"><div class="notch"></div><div class="screen"><img src="shots/p-hero.png" alt=""></div></div>
@@ -135,7 +135,7 @@ body.v #logo-dot { left: 60px; top: 90px; }
 
   <div id="s3" class="full">
     <div id="work-title" class="disp">Built for the<br><em>real world.</em></div>
-    <div id="count" class="disp">01/06</div>
+    <div id="count" class="disp">01/05</div>
     <div id="cards"></div>
   </div>
 
@@ -178,12 +178,12 @@ const CONFIG = {
   ctaSub: 'Send the brief · Reply within one working day · Fixed plan & price',
 };
 const PROJECTS = [
-  ['King Paddle', 'Booking system', 'king-paddle-1.webp', 'lime'],
-  ['Apotek Berkah', 'Point of sale', 'apotek-3.webp', 'sky'],
-  ['Heavy Equipment', 'Fleet management', 'fleet-operations-1.webp', 'pink'],
-  ['Brownies Pastry', 'Ordering platform', 'pastry-2.webp', 'coral'],
-  ['Jawa Motor', 'Catalogue & CRM', 'motor-1.webp', 'sky'],
-  ['Grand Palace', 'Invitation store', 'invitation-1.webp', 'lime'],
+  // Generic names only: no client brands. Images are blurred copies (blur-gallery.sh).
+  ['Sport Booking', 'Court booking system', 'king-paddle-1.jpg', 'lime'],
+  ['Pharmacy POS', 'Cashier system', 'apotek-3.jpg', 'sky'],
+  ['Heavy Equipment', 'Fleet management', 'fleet-operations-1.jpg', 'pink'],
+  ['F&B Ordering', 'Ordering platform', 'pastry-1.jpg', 'coral'],
+  ['Dealership Web', 'Catalogue & CRM', 'motor-1.jpg', 'sky'],
 ];
 const SERVICES = [
   ['01', 'Launch sites', 'A sharp, fast page for a new product, campaign, or company.'],
@@ -217,12 +217,12 @@ $('#tick').textContent = ('INTERFACES + APIS + DATABASES + MOTION + PERFORMANCE 
 
 // Project cards: fanned stack (16:9) or vertical stack (9:16)
 const CARD_POS = VERTICAL
-  ? [[50, 560, -4], [540, 650, 3], [50, 960, 2], [540, 1050, -3], [50, 1360, -2], [540, 1450, 3]]
-  : [[110, 400, -4], [700, 330, 2], [1290, 400, -3], [200, 640, 3], [790, 600, -2], [1340, 640, 4]];
+  ? [[50, 560, -4], [540, 650, 3], [50, 960, 2], [540, 1050, -3], [295, 1380, -2]]
+  : [[110, 400, -4], [700, 330, 2], [1290, 400, -3], [460, 640, 3], [1060, 620, -2]];
 const cards = PROJECTS.map(([t, k, img, tone], i) => {
   const el = document.createElement('div');
   el.className = `card tone-${tone}`;
-  el.innerHTML = `<div class="img"><img src="../../../linea.js/public/projects/gallery/${img}" alt=""></div><div class="meta"><h3>${t}</h3><p>${k}</p></div>`;
+  el.innerHTML = `<div class="img"><img src="gallery/${img}" alt=""></div><div class="meta"><h3>${t}</h3><p>${k}</p></div>`;
   const [x, y, r] = CARD_POS[i];
   Object.assign(el.style, { left: x + 'px', top: y + 'px', width: (VERTICAL ? 470 : 520) + 'px', transform: `rotate(${r}deg)` });
   $('#cards').appendChild(el);
@@ -306,7 +306,7 @@ cards.forEach((c, i) => {
     .add(() => {}, at);
 });
 const counter = { n: 1 };
-tl.to(counter, { n: 6, duration: 2.75, ease: 'none', onUpdate: () => { $('#count').textContent = `0${Math.round(counter.n)}/06`; } }, 9.5)
+tl.to(counter, { n: PROJECTS.length, duration: (PROJECTS.length - 1) * .55, ease: 'none', onUpdate: () => { $('#count').textContent = `0${Math.round(counter.n)}/0${PROJECTS.length}`; } }, 9.5)
   .to('.card', { y: '-=30', duration: 1.6, ease: 'sine.inOut' }, 12.4)
   .to('#s3', { yPercent: -100, duration: .7, ease: 'power3.in' }, 14.0)
   .set('#s3', { visibility: 'hidden' }, 14.7);

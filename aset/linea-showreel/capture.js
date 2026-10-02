@@ -47,7 +47,7 @@ const toSection = (p, id, offset = 0) => p.evaluate(([id, offset]) => {
   // Walk the page once so every lazy image and reveal has run.
   const height = await p.evaluate(() => document.documentElement.scrollHeight);
   for (let y = 0; y < height; y += 600) { await p.evaluate((y) => window.scrollTo(0, y), y); await p.waitForTimeout(120); }
-  for (const [name, id, offset] of [['l-hero', 'top', 0], ['l-studio', 'studio', 0], ['l-work', 'work', 380], ['l-services', 'services', 0], ['l-packages', 'packages', 420], ['l-brief', 'brief', 0]]) {
+  for (const [name, id, offset] of [['l-hero', 'top', 0], ['l-studio', 'studio', 0], ['l-services', 'services', 0], ['l-packages', 'packages', 420], ['l-brief', 'brief', 0]]) {
     await toSection(p, id, offset);
     await settle(p, 1500);
     await p.screenshot({ path: shot(name) });

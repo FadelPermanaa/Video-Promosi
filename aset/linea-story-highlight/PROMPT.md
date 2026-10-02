@@ -110,20 +110,20 @@ Teks di bawah adalah teks yang **tampil di layar**. Bagian dalam kurung adalah a
 
 ### Highlight 3 — Karya
 
-Setiap proyek digambar ulang sebagai **ilustrasi/mockup baru**, bukan screenshot website. Satu story untuk setiap proyek: nama + jenis + satu kalimat hasil + 2–3 label teknologi.
+Setiap proyek digambar ulang sebagai **ilustrasi/mockup baru**, bukan screenshot website. Satu story untuk setiap proyek: nama + jenis + satu kalimat hasil + 2–3 label teknologi. **Nama brand klien tidak ditampilkan**: setiap proyek disebut dengan jenis sistemnya.
 
 1. **"Sudah bikin apa saja?"** (Lima kartu proyek mengalir di satu garis.)
-2. **King Paddle** — *Sistem booking*
+2. **Sport Booking System** — *Booking lapangan olahraga*
    *Jadwal lapangan real-time, pembayaran aman, kuota member, tarif bisa diubah pemilik tanpa coding.*
-3. **Apotek Berkah** — *Kasir apotek (POS)*
+3. **Sistem Kasir Apotek** — *Kasir & stok obat*
    *Kasir cepat pakai keyboard, menolak obat kedaluwarsa, mencatat setiap pergerakan stok, backup otomatis.*
-4. **Heavy Equipment Operations** — *Manajemen alat berat*
+4. **Sistem Alat Berat** — *Manajemen armada*
    *Lacak pemakaian alat, deteksi jam mesin yang tidak tercatat, pantau efisiensi BBM, cek laporan lapangan sebelum ditagih.*
-5. **Brownies Pastry** — *Pemesanan F&B*
+5. **F&B Ordering System** — *Pemesanan toko kue*
    *Pesan dalam 4 langkah sesuai kapasitas dapur, cek pembayaran, panel pemilik yang praktis.*
-6. **Jawa Motor** — *Katalog & CRM*
+6. **Dealership Website** — *Katalog & CRM motor*
    *Katalog motor bekas dengan filter pintar, perbandingan, dan pengelolaan calon pembeli.*
-7. **"Lima usaha, lima sistem berbeda."**
+7. **"Lima jenis usaha, lima sistem berbeda."**
    Sub: *Semuanya dibentuk dari apa yang terjadi setelah pelanggan menekan tombol.*
    (Animasi penutup logo.)
 
@@ -177,7 +177,7 @@ Setiap proyek digambar ulang sebagai **ilustrasi/mockup baru**, bukan screenshot
 | Proses | Send the brief → I reply with a direction (1 hari kerja) → We align for 30 minutes → You get the fixed plan |
 | Kepemilikan | Repository, domain, database, akun, desain, dokumentasi diserahkan |
 | Waktu | Landing page 1–2 minggu. Produk dengan akun/pembayaran 4–8 minggu |
-| Proyek | King Paddle · Apotek Berkah · Heavy Equipment Operations · Brownies Pastry · Jawa Motor |
+| Proyek | Sport Booking System · Sistem Kasir Apotek · Sistem Alat Berat · F&B Ordering System · Dealership Website |
 | Kontak | Lineajs01@gmail.com · instagram.com/linea.js |
 
 ---
@@ -207,7 +207,8 @@ linea.js/marketing/stories/
 | Bahasa | Bahasa Indonesia |
 | Harga | Tidak ditampilkan. Pertanyaan biaya diarahkan ke DM |
 | Grand Palace | Tidak dimasukkan |
-| Proyek di Karya | Lima proyek dari website (King Paddle, Apotek Berkah, Heavy Equipment Operations, Brownies Pastry, Jawa Motor) |
+| Proyek di Karya | Lima proyek dari website, disebut dengan jenis sistemnya, bukan nama brand klien |
+| Nama brand klien | Tidak ditampilkan di video mana pun |
 | Kontak | DM Instagram @linea.js dan email Lineajs01@gmail.com |
 | Sapaan | "Kami" |
 | Format | Satu video per highlight (bukan per story, bukan satu video untuk semuanya) |

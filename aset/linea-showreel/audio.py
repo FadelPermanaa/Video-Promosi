@@ -245,7 +245,7 @@ for t in (5.1, 6.3, 25.9):                        # stickers / button
     put(t, bubble_pop(), 0.22)
 for t in (6.2, 7.4):                              # browser pages
     put(t, blip(900, 1200, 0.05), 0.08, 0.3)
-for i in range(6):                                # project cards land
+for i in range(5):                                # project cards land
     put(9.5 + i * 0.55, kick(), 0.2)
     put(9.55 + i * 0.55, pluck(523.25 * (1, 1.12, 1.26, 1.5, 1.68, 2)[i], 0.4), 0.12, (-0.4, 0.4)[i % 2])
 for i in range(4):                                # service rows light up

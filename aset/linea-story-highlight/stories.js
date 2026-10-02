@@ -25,13 +25,13 @@ window.STORIES = {
     {
       "id": "karya", "title": "Karya", "icon": "star",
       "stories": [
-        { "type": "intro", "d": 5.5, "title": "Sudah bikin <em>apa saja?</em>", "sub": "Lima usaha yang sudah jalan dengan sistem buatan kami.", "cards": ["King Paddle", "Apotek Berkah", "Heavy Equipment", "Brownies Pastry", "Jawa Motor"], "cardIcons": ["court", "pill", "truck", "cake", "moto"] },
-        { "type": "project", "d": 7, "mock": "booking", "name": "King Paddle", "kind": "Sistem booking", "body": "Jadwal lapangan real-time, pembayaran aman, kuota member, dan tarif yang bisa diubah pemilik tanpa coding.", "tags": ["Node", "PostgreSQL", "Pembayaran"] },
-        { "type": "project", "d": 7, "mock": "pos", "name": "Apotek Berkah", "kind": "Kasir apotek", "body": "Kasir cepat pakai keyboard, menolak obat kedaluwarsa, mencatat setiap pergerakan stok, dan backup otomatis.", "tags": ["Express", "Stok", "Excel"] },
-        { "type": "project", "d": 7, "mock": "fleet", "name": "Heavy Equipment", "kind": "Manajemen alat berat", "body": "Lacak pemakaian alat, deteksi jam mesin yang tidak tercatat, pantau efisiensi BBM, dan cek laporan lapangan sebelum ditagih.", "tags": ["Express", "SQLite", "Bisa offline"] },
-        { "type": "project", "d": 7, "mock": "order", "name": "Brownies Pastry", "kind": "Pemesanan F&B", "body": "Pesan dalam 4 langkah sesuai kapasitas dapur, cek pembayaran, dan panel pemilik yang praktis.", "tags": ["Toko online", "PostgreSQL", "WhatsApp"] },
-        { "type": "project", "d": 7, "mock": "catalog", "name": "Jawa Motor", "kind": "Katalog & CRM", "body": "Katalog motor bekas dengan filter pintar, perbandingan, dan pengelolaan calon pembeli.", "tags": ["Katalog", "Admin", "CRM"] },
-        { "type": "statement", "d": 6, "title": "Lima usaha, <em>lima sistem berbeda.</em>", "sub": "Semuanya dibentuk dari apa yang terjadi setelah pelanggan menekan tombol." }
+        { "type": "intro", "d": 5.5, "title": "Sudah bikin <em>apa saja?</em>", "sub": "Lima jenis usaha yang sudah jalan dengan sistem buatan kami.", "cards": ["Sport booking", "Kasir apotek", "Alat berat", "F&B ordering", "Dealership web"], "cardIcons": ["court", "pill", "truck", "cake", "moto"] },
+        { "type": "project", "d": 7, "mock": "booking", "name": "Sport Booking System", "kind": "Booking lapangan olahraga", "body": "Jadwal lapangan real-time, pembayaran aman, kuota member, dan tarif yang bisa diubah pemilik tanpa coding.", "tags": ["Node", "PostgreSQL", "Pembayaran"] },
+        { "type": "project", "d": 7, "mock": "pos", "name": "Sistem Kasir Apotek", "kind": "Kasir & stok obat", "body": "Kasir cepat pakai keyboard, menolak obat kedaluwarsa, mencatat setiap pergerakan stok, dan backup otomatis.", "tags": ["Express", "Stok", "Excel"] },
+        { "type": "project", "d": 7, "mock": "fleet", "name": "Sistem Alat Berat", "kind": "Manajemen armada", "body": "Lacak pemakaian alat, deteksi jam mesin yang tidak tercatat, pantau efisiensi BBM, dan cek laporan lapangan sebelum ditagih.", "tags": ["Express", "SQLite", "Bisa offline"] },
+        { "type": "project", "d": 7, "mock": "order", "name": "F&B Ordering System", "kind": "Pemesanan toko kue", "body": "Pesan dalam 4 langkah sesuai kapasitas dapur, cek pembayaran, dan panel pemilik yang praktis.", "tags": ["Toko online", "PostgreSQL", "WhatsApp"] },
+        { "type": "project", "d": 7, "mock": "catalog", "name": "Dealership Website", "kind": "Katalog & CRM motor", "body": "Katalog motor bekas dengan filter pintar, perbandingan, dan pengelolaan calon pembeli.", "tags": ["Katalog", "Admin", "CRM"] },
+        { "type": "statement", "d": 6, "title": "Lima jenis usaha, <em>lima sistem berbeda.</em>", "sub": "Semuanya dibentuk dari apa yang terjadi setelah pelanggan menekan tombol." }
       ]
     },
     {
