@@ -206,7 +206,7 @@ linea.js/marketing/stories/
 |---|---|
 | Bahasa | Bahasa Indonesia |
 | Harga | Tidak ditampilkan. Pertanyaan biaya diarahkan ke DM |
-| Grand Palace | Tidak dimasukkan |
+| Proyek undangan pernikahan | Tidak dimasukkan |
 | Proyek di Karya | Lima proyek dari website, disebut dengan jenis sistemnya, bukan nama brand klien |
 | Nama brand klien | Tidak ditampilkan di video mana pun |
 | Kontak | DM Instagram @linea.js dan email Lineajs01@gmail.com |
