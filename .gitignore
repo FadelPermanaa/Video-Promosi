@@ -1,0 +1,11 @@
+node_modules/
+frames/
+preview/
+audio/
+audio.wav
+cues/
+parts/
+.DS_Store
+
+# Video hasil render ulang disimpan di video/, bukan di aset/
+aset/*/output/*.mp4
