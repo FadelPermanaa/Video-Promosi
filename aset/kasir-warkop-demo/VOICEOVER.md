@@ -38,6 +38,18 @@ Logo penutup Linea.js (62–65,6 dtk) tanpa narasi.
 
 **Setelan yang disarankan:** model *Eleven Multilingual v2* atau *Eleven v3*, suara yang hangat dan santai, Stability 45–55 %, Similarity ±75 %, Style 0–15 %, Speed normal.
 
+## Langsung lewat API ElevenLabs
+
+```bash
+python3 generate-voice.py --list-voices   # daftar suara di akun (id, nama, bahasa)
+ELEVENLABS_VOICE_ID=<id> python3 generate-voice.py   # 11 kalimat → vo/01–11.mp3 → video
+python3 generate-voice.py --only 4,6      # ulangi kalimat tertentu saja
+```
+
+- Key dibaca dari `ELEVENLABS_API_KEY` dan dikirim sebagai header `xi-api-key`. ElevenLabs **tidak** menerima key lewat header `Authorization`.
+- Di sesi cloud: simpan key sebagai environment variable `ELEVENLABS_API_KEY` (atau sebagai API credential dengan header `xi-api-key`), dan izinkan `api.elevenlabs.io` di Network access. Jangan simpan key di repo.
+- Tanpa `ELEVENLABS_VOICE_ID`, skrip memilih suara berlabel Indonesia di akun, lalu suara milikmu sendiri, lalu suara pertama yang ada.
+
 ## Menggabungkan
 
 ```bash
