@@ -28,6 +28,9 @@ const ICONS = {
   app: I('<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01" stroke-width="2.2"/><path d="M7 13h5M7 16.5h8"/>'),
   split: I('<rect x="3" y="4" width="7.5" height="16" rx="2"/><rect x="13.5" y="4" width="7.5" height="16" rx="2"/><path d="M6.75 9v6M17.25 9h.01M17.25 12h.01M17.25 15h.01" stroke-width="2.2"/>'),
   cal: I('<rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8.5 15l2 2 4.5-4.5"/>'),
+  play: I('<circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5Z"/>'),
+  users: I('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.6c2.6.2 4.4 1.9 5 5.4"/>'),
+  briefcase: I('<rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 5v2M3 12.5h18M12 11.5v2"/>'),
   court: I('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M12 5v14M3 12h18"/>'),
   pill: I('<rect x="2.5" y="8" width="19" height="8" rx="4" transform="rotate(-35 12 12)"/><path d="M9.2 7.9l5.6 8.2"/>'),
   truck: I('<path d="M3 17V8h10v9M13 11h4l4 3v3h-8"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>'),
@@ -56,7 +59,7 @@ const lines = (html) => html.split('<br>').map((l) => `<span class="line-wrap"><
 
 if (params.has('cover')) {
   document.body.classList.add('cover');
-  const h = DATA.find((x) => x.id === params.get('cover'));
+  const h = [...DATA, ...(window.STORIES.extraCovers || [])].find((x) => x.id === params.get('cover'));
   $('#cover-icon').innerHTML = h.icon === 'x' ? MARK : ICONS[h.icon];
   window.DURATION = 0; window.seek = () => {}; window.CUES = [];
   window.ready = Promise.all([document.fonts.ready, ...$$('img').map((i) => i.decode().catch(() => {}))]);

@@ -1,5 +1,6 @@
 // Renders each highlight as one continuous video, plus the highlight covers.
 //   node render.js cues            -> cues/<highlight>.json  (timing for audio.py)
+//   node render.js covers          -> output/covers/*.png only (also the extra covers in stories.js)
 //   node render.js [highlight]     -> output/<n>-<highlight>.mp4 (needs audio/<highlight>.wav), output/covers/*.png
 //   node render.js preview karya 4.5,12   -> preview/karya-4.5.jpg …
 const path = require('path');
@@ -34,6 +35,14 @@ const dir = (...p) => { const d = path.join(__dirname, ...p); fs.mkdirSync(d, { 
       const info = await page.evaluate(() => ({ ...window.MUSIC, cues: window.CUES }));
       fs.writeFileSync(path.join(dir('cues'), `${H.id}.json`), JSON.stringify(info, null, 1));
       console.log('cues', H.id, info.duration.toFixed(1) + 's', info.cues.length, 'cues');
+    }
+  } else if (mode === 'covers') {
+    // Every highlight cover, plus covers for highlights that have no video here (extraCovers)
+    const all = JSON.parse(src.slice(src.indexOf('=', src.indexOf('window.STORIES')) + 1).trim().replace(/;\s*$/, ''));
+    for (const H of [...all.highlights, ...(all.extraCovers || [])]) {
+      await open(`cover=${H.id}`);
+      await page.screenshot({ path: path.join(dir('output', 'covers'), `${H.id}.png`) });
+      console.log('cover', H.id);
     }
   } else {
     for (const [hi, H] of DATA.entries()) {

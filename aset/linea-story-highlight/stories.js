@@ -68,5 +68,10 @@ window.STORIES = {
         { "type": "cta", "d": 6.5, "title": "Punya ide? <em>Kirim versi kasarnya.</em>", "button": "Kirim DM", "contacts": ["@linea.js", "Lineajs01@gmail.com"] }
       ]
     }
+  ],
+  "extraCovers": [
+    { "id": "demo", "title": "Demo", "icon": "play", "note": "Video demo tiap proyek (versi 9:16 dari folder video/)" },
+    { "id": "client", "title": "W Client", "icon": "users", "note": "Foto atau cerita bersama klien" },
+    { "id": "portofolio", "title": "Portofolio", "icon": "briefcase", "note": "Hasil kerja" }
   ]
 };

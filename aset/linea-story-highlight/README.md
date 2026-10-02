@@ -22,6 +22,8 @@ Every visual is new: there are no screenshots of the website. The project screen
 - **Logo animation** of Linea.js once, at the end of each video.
 - **Safe zones.** Important text stays out of the top 260 px and the bottom 340 px, where Instagram shows the account name and the reply box.
 
+Covers for three highlights that have no video in this folder are also in `output/covers/`: **Demo** (`demo.png`, for the 9:16 project videos), **W Client** (`client.png`) and **Portofolio** (`portofolio.png`). They are listed under `extraCovers` in [stories.js](stories.js); `node render.js covers` redraws every cover.
+
 ## Posting them as highlights
 
 1. **Post the story.** Upload one video as a story, for example `1-tentang.mp4`.
