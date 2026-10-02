@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>PawFlow — promo</title>
+<link rel="stylesheet" href="fonts/poppins.css">
+<style>
+:root {
+  --brand: #174B37; --brand-2: #2B6A51; --deep: #10291F; --lime: #D4F087; --peach: #F3CF9B;
+  --cream: #F6F7F1; --mint: #DFF3E7; --ink: #17211B; --ink-2: #5E6B62; --wa: #1fa855; --white: #fff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
+body { font-family: 'Poppins', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+#stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--cream); }
+body.v #stage { width: 1080px; height: 1920px; }
+.abs { position: absolute; }
+.full { position: absolute; inset: 0; }
+
+/* ---------- Backgrounds ---------- */
+#bg-paws { opacity: .5; }
+#bg-paws svg { position: absolute; color: rgba(23,75,55,.09); }
+#bg-glow { background: radial-gradient(55% 50% at 78% 22%, rgba(212,240,135,.45), transparent 70%), radial-gradient(45% 45% at 10% 90%, rgba(243,207,155,.4), transparent 70%); }
+#bg-dark { background: radial-gradient(80% 70% at 50% 40%, #1d4636, #0b1f17 75%); }
+
+/* ---------- Scene 1: the chat chaos ---------- */
+.msg { position: absolute; max-width: 440px; padding: 18px 24px 14px; border-radius: 26px 26px 26px 8px; background: #fff; color: #222; font-size: 25px; line-height: 1.32; box-shadow: 0 22px 44px -14px rgba(0,0,0,.55); }
+.msg.me { background: #DCF8C6; border-radius: 26px 26px 8px 26px; }
+.msg small { display: block; text-align: right; font-size: 15px; color: #8a8a8a; margin-top: 4px; }
+.msg b { color: var(--brand-2); font-weight: 700; font-size: 16px; display: block; margin-bottom: 2px; }
+#badge { width: 150px; height: 150px; border-radius: 40px; background: #25D366; display: grid; place-items: center; box-shadow: 0 24px 50px -16px rgba(0,0,0,.6); }
+#badge .n { position: absolute; right: -26px; top: -26px; min-width: 86px; height: 86px; padding: 0 16px; border-radius: 43px; background: #e53935; color: #fff; font-weight: 800; font-size: 38px; display: grid; place-items: center; border: 6px solid #0b1f17; }
+body:not(.v) #badge { left: 1630px; top: 820px; }
+body.v #badge { left: 830px; top: 1620px; }
+.hook { position: absolute; left: 0; right: 0; text-align: center; color: #fff; font-weight: 800; letter-spacing: -.03em; line-height: 1.06; }
+.hook .line { display: block; overflow: hidden; padding-bottom: .08em; }
+.hook .line span { display: inline-block; }
+#hook { top: 330px; font-size: 100px; }
+body.v #hook { top: 700px; font-size: 62px; padding: 0 30px; }
+body.v .hook .line span { white-space: nowrap; }
+.hl { color: var(--deep); background: var(--lime); border-radius: 18px; padding: 0 .18em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+#wipe, #wipe2 { position: absolute; left: 50%; top: 50%; width: 200px; height: 200px; margin: -100px 0 0 -100px; border-radius: 50%; }
+#wipe { background: var(--lime); }
+#wipe2 { background: var(--cream); }
+
+/* ---------- Scene 2: title ---------- */
+#logo { left: 0; right: 0; top: 250px; text-align: center; }
+body.v #logo { top: 600px; }
+#logo-mark { display: inline-grid; place-items: center; width: 170px; height: 170px; border-radius: 50px 50px 50px 16px; background: var(--brand); color: var(--lime); box-shadow: 0 30px 60px -20px rgba(23,75,55,.65); }
+#logo-name { font-size: 132px; font-weight: 800; letter-spacing: -.04em; margin-top: 22px; line-height: 1.02; }
+#logo-name em { font-style: normal; color: var(--brand-2); }
+#logo-name .w { display: inline-block; }
+body.v #logo-name { font-size: 120px; }
+#tagline { font-size: 38px; font-weight: 500; color: var(--ink-2); margin-top: 18px; }
+body.v #tagline { font-size: 36px; padding: 0 70px; }
+.chips { display: flex; gap: 14px; justify-content: center; margin-top: 34px; flex-wrap: wrap; }
+body.v .chips { padding: 0 60px; }
+.chip { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 999px; font-size: 26px; font-weight: 600; background: #fff; border: 2px solid rgba(23,33,27,.12); white-space: nowrap; }
+.chip .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--brand); }
+.chip.peach { background: var(--peach); border-color: var(--peach); }
+.chip.lime { background: var(--lime); border-color: var(--lime); }
+.chip.dark { background: var(--brand); color: #fff; border-color: var(--brand); }
+.chip.dark .dot { background: var(--lime); }
+.chip.wa { background: var(--wa); color: #fff; border-color: var(--wa); }
+.chip.wa .dot { background: #fff; }
+
+/* ---------- Copy blocks ---------- */
+.copy { position: absolute; width: 600px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: 9px 20px; border: 2px solid currentColor; border-radius: 999px; color: var(--brand-2); }
+.eyebrow::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: currentColor; }
+.copy h2 { font-size: 60px; line-height: 1.06; letter-spacing: -.035em; font-weight: 800; margin: 26px 0 30px; }
+.copy h2 em { font-style: normal; background: linear-gradient(transparent .2em, var(--lime) .2em); border-radius: 14px; padding: 0 .12em; white-space: nowrap; }
+.copy ul { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.copy li { display: flex; align-items: center; gap: 16px; font-size: 29px; font-weight: 500; color: var(--ink-2); }
+.copy li b { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--brand); color: var(--lime); font-size: 22px; }
+body:not(.v) .copy { left: 100px; top: 250px; }
+body.v .copy { left: 70px; right: 70px; width: auto; top: 200px; }
+body.v .copy h2 { font-size: 78px; }
+body.v .copy li { font-size: 33px; }
+
+/* ---------- Laptop ---------- */
+.laptop { position: absolute; width: 1140px; }
+.laptop .lid { background: #14201a; border-radius: 28px 28px 0 0; padding: 18px 18px 20px; box-shadow: 0 50px 90px -30px rgba(16,41,31,.55); }
+.laptop .screen { position: relative; width: 100%; aspect-ratio: 1.6; border-radius: 10px; overflow: hidden; background: #fff; }
+.laptop .zoom { position: absolute; inset: 0; }
+.laptop .zoom img { position: absolute; left: 0; top: 0; width: 100%; display: block; }
+.laptop .base { height: 26px; margin: 0 -50px; border-radius: 0 0 26px 26px; background: linear-gradient(#cfd6d0, #9aa79f); position: relative; }
+.laptop .base::after { content: ''; position: absolute; left: 50%; top: 0; width: 160px; height: 10px; margin-left: -80px; border-radius: 0 0 10px 10px; background: rgba(16,41,31,.25); }
+body:not(.v) .laptop { left: 720px; top: 175px; }
+body.v .laptop { left: 50px; top: 820px; width: 980px; }
+
+.ov { position: absolute; }
+.tap { width: 4.2%; aspect-ratio: 1; border-radius: 50%; background: rgba(212,240,135,.6); border: 4px solid #9cc23a; transform: translate(-50%, -50%); }
+.ring { border: 4px solid #e0782f; border-radius: 12px; box-shadow: 0 0 0 6px rgba(224,120,47,.2); }
+
+/* floating chips */
+.float { position: absolute; }
+.float .chip { font-size: 30px; padding: 16px 30px; box-shadow: 0 24px 50px -18px rgba(16,41,31,.55); }
+body:not(.v) .float { left: 1110px; top: 905px; }
+body.v .float { left: 0; right: 0; text-align: center; top: 1660px; }
+
+/* ---------- Scene 6: CTA ---------- */
+#cta-card { position: absolute; left: 50%; width: 1360px; margin-left: -680px; top: 110px; padding: 60px 80px 62px; border-radius: 56px; background: var(--brand); color: #fff; text-align: center; box-shadow: 0 60px 120px -40px rgba(16,41,31,.7); }
+body.v #cta-card { width: 960px; margin-left: -480px; top: 280px; padding: 70px 56px; }
+#cta-card h2 { font-size: 86px; line-height: 1.04; letter-spacing: -.04em; font-weight: 800; }
+body.v #cta-card h2 { font-size: 92px; }
+#cta-card h2 em { font-style: normal; color: var(--lime); }
+#cta-btn { display: inline-flex; align-items: center; gap: 18px; margin-top: 40px; padding: 30px 60px; border-radius: 999px; background: var(--lime); color: var(--deep); font-size: 46px; font-weight: 700; position: relative; }
+#cta-btn .glow { position: absolute; inset: -14px; border-radius: 999px; border: 6px solid rgba(212,240,135,.55); }
+#cta-sub { font-size: 26px; color: #B9D0C4; margin-top: 26px; font-weight: 500; }
+#trail { position: absolute; inset: 0; }
+#trail svg { position: absolute; color: var(--brand-2); }
+.heart { position: absolute; font-size: 54px; color: #e0782f; }
+#brand-foot { position: absolute; left: 0; right: 0; text-align: center; font-size: 26px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 12px; }
+body:not(.v) #brand-foot { bottom: 36px; }
+body.v #brand-foot { bottom: 110px; font-size: 30px; }
+.mk { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 14px 14px 14px 5px; background: var(--brand); color: var(--lime); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="paw" viewBox="0 0 24 24"><g fill="currentColor"><ellipse cx="12" cy="16.2" rx="5.2" ry="4.4"/><ellipse cx="5.2" cy="10.4" rx="2.1" ry="2.6" transform="rotate(-18 5.2 10.4)"/><ellipse cx="9.3" cy="6.2" rx="2.1" ry="2.7" transform="rotate(-6 9.3 6.2)"/><ellipse cx="14.7" cy="6.2" rx="2.1" ry="2.7" transform="rotate(6 14.7 6.2)"/><ellipse cx="18.8" cy="10.4" rx="2.1" ry="2.6" transform="rotate(18 18.8 10.4)"/></g></symbol>
+</svg>
+<div id="stage">
+  <div id="bg-paws" class="full"></div>
+  <div id="bg-glow" class="full"></div>
+
+  <!-- Scene 1 -->
+  <div id="s1" class="full">
+    <div id="bg-dark" class="full"></div>
+    <div id="msgs" class="full"></div>
+    <div id="badge" class="abs"><svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12Z"/></svg><span class="n" id="badge-n">12</span></div>
+    <div id="hook" class="hook">
+      <span class="line"><span>Jadwal grooming di buku?</span></span>
+      <span class="line"><span>Stok pakan habis mendadak?</span></span>
+      <span class="line"><span class="hl">Alergi anabul lupa dicatat?</span></span>
+    </div>
+  </div>
+  <div id="wipe"></div>
+  <div id="wipe2"></div>
+
+  <!-- Scene 2 -->
+  <div id="logo" class="abs">
+    <div id="logo-mark"><svg width="110" height="110"><use href="#paw"/></svg></div>
+    <div id="logo-name"></div>
+    <div id="tagline"></div>
+    <div class="chips" id="logo-chips">
+      <span class="chip lime"><span class="dot"></span>Petshop &amp; grooming</span>
+      <span class="chip peach"><span class="dot"></span>Penitipan hewan</span>
+      <span class="chip"><span class="dot"></span>Bisa banyak cabang</span>
+    </div>
+  </div>
+
+  <!-- Scene 3: grooming -->
+  <div id="copy3" class="copy">
+    <span class="eyebrow">Grooming</span>
+    <h2>Jadwal grooming, <em>rapi terpantau.</em></h2>
+    <ul>
+      <li><b>✓</b>Status: booked → check-in → siap</li>
+      <li><b>✓</b>Groomer &amp; catatan tiap hewan</li>
+      <li><b>✓</b>Jadwal tidak bentrok</li>
+    </ul>
+  </div>
+  <div id="lap3" class="laptop"><div class="lid"><div class="screen"><div class="zoom">
+    <img src="shots/g-0.png" alt="">
+    <img id="g1" src="shots/g-1.png" alt="">
+    <img id="g2" src="shots/g-2.png" alt="">
+    <div class="ov tap" id="tapBruno"></div>
+    <div class="ov tap" id="tapMochi"></div>
+  </div></div></div><div class="base"></div></div>
+  <div id="chip3" class="float"><span class="chip dark"><span class="dot"></span>Mochi siap dijemput</span></div>
+
+  <!-- Scene 4: passport + boarding -->
+  <div id="copy4" class="copy">
+    <span class="eyebrow">Paspor &amp; penitipan</span>
+    <h2>Kenali setiap <em>anabul.</em></h2>
+    <ul>
+      <li><b>✓</b>Alergi, vaksin, berat badan</li>
+      <li><b>✓</b>Tugas harian hewan titipan</li>
+      <li><b>✓</b>Kabar ke pemilik via WhatsApp</li>
+    </ul>
+  </div>
+  <div id="lap4" class="laptop"><div class="lid"><div class="screen"><div class="zoom">
+    <img src="shots/c-0.png" alt="">
+    <img id="b0" src="shots/b-0.png" alt="">
+    <img id="b1" src="shots/b-1.png" alt="">
+    <div class="ov ring" id="ringAllergy"></div>
+    <div class="ov tap" id="tapMeal"></div>
+  </div></div></div><div class="base"></div></div>
+  <div id="chip4" class="float"><span class="chip wa"><span class="dot"></span>Coco sudah makan sore 🐶</span></div>
+
+  <!-- Scene 5: sale + stock + reports -->
+  <div id="copy5" class="copy">
+    <span class="eyebrow">Kasir &amp; stok</span>
+    <h2>Jualan tercatat, <em>stok ikut update.</em></h2>
+    <ul>
+      <li><b>✓</b>Kasir QRIS, kartu, tunai</li>
+      <li><b>✓</b>Peringatan stok &amp; kedaluwarsa</li>
+      <li><b>✓</b>Laporan penjualan &amp; performa</li>
+    </ul>
+  </div>
+  <div id="lap5" class="laptop"><div class="lid"><div class="screen"><div class="zoom">
+    <img src="shots/s-0.png" alt="">
+    <img id="s1i" src="shots/s-1.png" alt="">
+    <img id="o1" src="shots/o-1.png" alt="">
+    <img id="r0" src="shots/r-0.png" alt="">
+    <div class="ov tap" id="tapKitten"></div>
+    <div class="ov tap" id="tapCatnip"></div>
+    <div class="ov tap" id="tapCheckout"></div>
+    <div class="ov ring" id="ringStock"></div>
+  </div></div></div><div class="base"></div></div>
+  <div id="chip5" class="float"><span class="chip dark"><span class="dot"></span>Stok otomatis berkurang</span></div>
+
+  <!-- Scene 6: CTA -->
+  <div id="trail"></div>
+  <div id="hearts"></div>
+  <div id="cta-card">
+    <h2 id="cta-head"></h2>
+    <div id="cta-btn"><span class="glow"></span><span id="cta-text"></span> <span>→</span></div>
+    <div id="cta-sub"></div>
+  </div>
+  <div id="brand-foot"><span class="mk"><svg width="28" height="28"><use href="#paw"/></svg></span><span id="foot-text"></span></div>
+</div>
+
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script>window.gsap || document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"><\/script>');</script>
+<script>
+// ---------- Text you can change, then re-render ----------
+const CONFIG = {
+  title: 'Paw<em>Flow</em>',
+  tagline: 'Sistem petshop: kasir · grooming · penitipan · stok',
+  headline: 'Petshop makin rapi,<br><em>anabul makin happy.</em>',
+  headlineVertical: 'Petshop<br>makin rapi,<br><em>anabul<br>makin happy.</em>',
+  cta: 'Minta Demo Gratis',
+  ctaSub: 'Kasir · Grooming · Penitipan · Paspor hewan · Laporan',
+  footer: 'PawFlow · contoh toko: Paw & Purr Bali',
+};
+// Tap points and highlight boxes (percent of the laptop screen), from shots/marks.json
+const MARKS = {
+  tapBruno: { left: 27.2, top: 45.65 }, tapMochi: { left: 67.85, top: 45.65 },
+  ringAllergy: { left: 39.5, top: 38.3, width: 56.06, height: 3.5 },
+  tapMeal: { left: 18.97, top: 67.63 },
+  tapKitten: { left: 30.47, top: 39.85 }, tapCatnip: { left: 47.67, top: 60.22 }, tapCheckout: { left: 67.45, top: 70.88 },
+  ringStock: { left: 70.85, top: 82.8, width: 25.96, height: 5.4 },
+};
+
+const params = new URLSearchParams(location.search);
+const VERTICAL = params.get('f') === 'v';
+if (VERTICAL) document.body.classList.add('v');
+const W = VERTICAL ? 1080 : 1920;
+const H = VERTICAL ? 1920 : 1080;
+function fit() { const s = Math.min(innerWidth / W, innerHeight / H); const st = document.getElementById('stage'); st.style.transformOrigin = '0 0'; st.style.transform = params.has('render') ? 'none' : `scale(${s})`; }
+fit(); addEventListener('resize', fit);
+
+const $ = (s) => document.querySelector(s);
+$('#logo-name').innerHTML = CONFIG.title;
+$('#tagline').textContent = CONFIG.tagline;
+$('#cta-head').innerHTML = VERTICAL ? CONFIG.headlineVertical : CONFIG.headline;
+$('#cta-text').textContent = CONFIG.cta;
+$('#cta-sub').textContent = CONFIG.ctaSub;
+$('#foot-text').textContent = CONFIG.footer;
+for (const [id, m] of Object.entries(MARKS)) Object.assign($('#' + id).style, Object.fromEntries(Object.entries(m).map(([k, v]) => [k, v + '%'])));
+
+let seed = 11;
+const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+const paw = (size) => `<svg width="${size}" height="${size}"><use href="#paw"/></svg>`;
+
+// Faint paw prints in the background
+for (let i = 0; i < 26; i++) {
+  const d = document.createElement('div');
+  d.innerHTML = paw(40 + rnd() * 50);
+  const s = d.firstChild;
+  Object.assign(s.style, { left: rnd() * W + 'px', top: rnd() * H + 'px', transform: `rotate(${(rnd() - .5) * 90}deg)` });
+  $('#bg-paws').appendChild(s);
+}
+
+// Chat messages piling up
+const MSGS = [
+  ['Besok grooming jam 10 bisa?', 0], ['Mochi alergi ayam ya kak 🙏', 0], ['Pakan kitten masih ada?', 0],
+  ['Coco udah makan belum kak?', 0], ['Vaksin Nori kapan ya?', 0], ['Ini bukti transfernya', 1],
+  ['Jemput Archie jam berapa?', 0], ['Shampoo yg kemarin ready?', 0], ['Mau nitip kucing 3 hari', 0],
+];
+const NAMES = ['Ayu', 'Raka', 'Sari', 'Raka', 'Ayu', '', 'Dimas', 'Putu', 'Wayan'];
+const spotsH = [[60, 50], [520, 30], [980, 60], [1440, 40], [260, 190], [1180, 190], [90, 790], [600, 860], [1120, 800]];
+const spotsV = [[50, 110], [560, 210], [60, 1300], [520, 1420], [300, 40], [60, 1560], [600, 1240], [90, 420], [580, 470]];
+const msgs = MSGS.map(([t, me], i) => {
+  const el = document.createElement('div');
+  el.className = 'msg' + (me ? ' me' : '');
+  el.innerHTML = (me ? '' : `<b>${NAMES[i]}</b>`) + t + `<small>${String(8 + i).padStart(2, '0')}:${String((10 + i * 7) % 60).padStart(2, '0')}</small>`;
+  const [x, y] = (VERTICAL ? spotsV : spotsH)[i];
+  Object.assign(el.style, { left: x + 'px', top: y + 'px', transform: `rotate(${(rnd() - .5) * 8}deg)` });
+  $('#msgs').appendChild(el);
+  return el;
+});
+
+// CTA: paw prints walking across the bottom, hearts rising from the card
+const trailY = VERTICAL ? 1600 : 905;
+const steps = Array.from({ length: VERTICAL ? 9 : 14 }, (_, i) => {
+  const d = document.createElement('div');
+  d.innerHTML = paw(64);
+  const s = d.firstChild;
+  const x = (VERTICAL ? 40 : 60) + i * (VERTICAL ? 118 : 136);
+  Object.assign(s.style, { left: x + 'px', top: (trailY + (i % 2 ? 34 : -10)) + 'px', transform: 'rotate(90deg)' });
+  $('#trail').appendChild(s);
+  return s;
+});
+const hearts = [0, 1, 2, 3].map((i) => {
+  const h = document.createElement('div');
+  h.className = 'heart';
+  h.textContent = '♥';
+  Object.assign(h.style, VERTICAL ? { left: (300 + i * 160) + 'px', top: '1330px' } : { left: (560 + i * 260) + 'px', top: '720px' });
+  $('#hearts').appendChild(h);
+  return h;
+});
+
+// ---------- Timeline ----------
+gsap.defaults({ ease: 'power3.out' });
+const tl = gsap.timeline({ paused: true });
+const set = (sel, v) => gsap.set(sel, v);
+const EXIT_Y = VERTICAL ? 1300 : 1000;
+
+const SCENE_ELS = { 8.55: '#lap3, #copy3, #chip3', 13.9: '#lap4, #copy4, #chip4', 19.3: '#lap5, #copy5, #chip5', 24.6: '#trail, #hearts, #cta-card, #brand-foot' };
+Object.values(SCENE_ELS).forEach((sel) => set(sel, { visibility: 'hidden' }));
+Object.entries(SCENE_ELS).forEach(([at, sel]) => tl.set(sel, { visibility: 'visible' }, +at));
+[[14.4, '#lap3, #copy3, #chip3'], [20.0, '#lap4, #copy4, #chip4'], [25.2, '#lap5, #copy5, #chip5']].forEach(([at, sel]) => tl.set(sel, { visibility: 'hidden' }, at));
+
+set('#bg-paws, #bg-glow', { opacity: 0 });
+set('#wipe, #wipe2', { scale: 0 });
+set('#logo', { opacity: 0 });
+set('#logo-name', { yPercent: 40, opacity: 0 });
+set('#logo-mark', { scale: 0, rotation: -25 });
+set('#tagline, #logo-chips .chip', { y: 30, opacity: 0 });
+set('.copy .eyebrow, .copy h2, .copy li', { y: 40, opacity: 0 });
+set('.laptop', { y: 700, rotationX: 18, transformPerspective: 1600 });
+set('#g1, #g2, #b0, #b1, #s1i, #o1, #r0', { opacity: 0 });
+set('.tap', { scale: 0, opacity: 0 });
+set('.ring', { opacity: 0, scale: 1.1 });
+set('.float', { y: 60, opacity: 0 });
+set('#trail svg', { opacity: 0, scale: .4 });
+set('.heart', { opacity: 0, scale: .3 });
+set('#cta-card', { y: -60, opacity: 0, scale: .92 });
+set('#cta-btn', { scale: .6, opacity: 0 });
+set('#cta-sub, #brand-foot', { opacity: 0, y: 20 });
+set('#hook .line span', { yPercent: 110 });
+set('.msg', { scale: 0, opacity: 0 });
+set('#badge', { scale: 0 });
+
+// Scene 1 — chat chaos (0–4.6s)
+msgs.forEach((m, i) => tl.to(m, { scale: 1, opacity: 1, duration: .35, ease: 'back.out(2.2)' }, .1 + i * .32));
+tl.to('#badge', { scale: 1, duration: .5, ease: 'back.out(2)' }, .3)
+  .to('#msgs', { y: VERTICAL ? -20 : -14, duration: .12, yoyo: true, repeat: 15, ease: 'sine.inOut' }, 1.6)
+  .to('#hook .line span', { yPercent: 0, duration: .8, stagger: .75, ease: 'power4.out' }, .5);
+const badgeN = { n: 12 };
+tl.to(badgeN, { n: 99, duration: 3.2, ease: 'power2.in', onUpdate: () => { $('#badge-n').textContent = badgeN.n >= 99 ? '99+' : Math.round(badgeN.n); } }, .4)
+  .to('#badge', { rotation: 8, duration: .08, yoyo: true, repeat: 9, ease: 'sine.inOut' }, 3.0);
+
+// Scene 2 — brand wipe + title (4.6–8.6s)
+tl.to('#wipe', { scale: 24, duration: .7, ease: 'power3.in' }, 4.0)
+  .to('#wipe2', { scale: 24, duration: .7, ease: 'power3.in' }, 4.45)
+  .set('#s1', { opacity: 0 }, 5.0)
+  .set('#bg-paws, #bg-glow', { opacity: 1 }, 5.0)
+  .set('#wipe', { opacity: 0 }, 5.0)
+  .to('#wipe2', { opacity: 0, duration: .4 }, 5.15)
+  .set('#logo', { opacity: 1 }, 4.9)
+  .to('#logo-mark', { scale: 1, rotation: 0, duration: .9, ease: 'back.out(1.8)' }, 4.95)
+  .to('#logo-mark svg', { rotation: 14, duration: .18, yoyo: true, repeat: 3, ease: 'sine.inOut' }, 5.7)
+  .to('#logo-name', { yPercent: 0, opacity: 1, duration: .8, ease: 'back.out(1.5)' }, 5.3)
+  .to('#tagline', { y: 0, opacity: 1, duration: .7 }, 5.9)
+  .to('#logo-chips .chip', { y: 0, opacity: 1, duration: .6, stagger: .12, ease: 'back.out(1.6)' }, 6.25)
+  .to('#logo', { y: -40, opacity: 0, duration: .6, ease: 'power2.in' }, 8.05);
+
+const copyIn = (sel, at) => tl.to(`${sel} .eyebrow`, { y: 0, opacity: 1, duration: .6 }, at)
+  .to(`${sel} h2`, { y: 0, opacity: 1, duration: .8 }, at + .12)
+  .to(`${sel} li`, { y: 0, opacity: 1, duration: .6, stagger: .18 }, at + .45);
+const copyOut = (sel, at) => tl.to(`${sel} .eyebrow, ${sel} h2, ${sel} li`, { y: -30, opacity: 0, duration: .45, stagger: .04, ease: 'power2.in' }, at);
+const tapAt = (sel, at) => tl.to(sel, { scale: 1, opacity: 1, duration: .22, ease: 'power2.out' }, at).to(sel, { scale: 1.8, opacity: 0, duration: .45, ease: 'power2.out' }, at + .22);
+const lapIn = (sel, at) => tl.to(sel, { y: 0, rotationX: 0, duration: 1.2 }, at);
+const lapOut = (sel, at, i) => tl.to(sel, { x: (i % 2 ? -1 : 1) * (VERTICAL ? 1200 : 1500), opacity: 0, duration: .9, ease: 'power3.in' }, at);
+const chipIn = (sel, at, out) => tl.to(sel, { y: 0, opacity: 1, duration: .7, ease: 'back.out(1.8)' }, at).to(sel, { y: 40, opacity: 0, duration: .4, ease: 'power2.in' }, out);
+// Gentle push-in toward a point on the screen (percent)
+const zoomTo = (sel, at, dur, s, ox, oy) => tl.to(`${sel} .zoom`, { scale: s, transformOrigin: `${ox}% ${oy}%`, duration: dur, ease: 'power2.inOut' }, at);
+
+// Scene 3 — grooming (8.6–14s)
+lapIn('#lap3', 8.65);
+copyIn('#copy3', 8.75);
+zoomTo('#lap3', 9.4, 1.0, 1.25, 95, 40);
+tapAt('#tapBruno', 10.2);
+tl.to('#g1', { opacity: 1, duration: .25 }, 10.3);
+tapAt('#tapMochi', 11.4);
+tl.to('#g2', { opacity: 1, duration: .25 }, 11.5);
+chipIn('#chip3', 11.8, 13.3);
+zoomTo('#lap3', 12.4, .8, 1, 95, 40);
+lapOut('#lap3', 13.4, 0);
+copyOut('#copy3', 13.4);
+
+// Scene 4 — passport + boarding (14–19.4s)
+lapIn('#lap4', 14.0);
+copyIn('#copy4', 14.15);
+zoomTo('#lap4', 14.7, 1.0, 1.3, 80, 38);
+tl.to('#ringAllergy', { opacity: 1, scale: 1, duration: .45, ease: 'back.out(2)' }, 15.1)
+  .to('#ringAllergy', { scale: 1.03, duration: .3, yoyo: true, repeat: 1, ease: 'sine.inOut' }, 15.55)
+  .to('#ringAllergy', { opacity: 0, duration: .25 }, 16.1);
+zoomTo('#lap4', 16.1, .6, 1.3, 15, 66);
+tl.to('#b0', { opacity: 1, duration: .35, ease: 'power1.inOut' }, 16.2);
+tapAt('#tapMeal', 17.0);
+tl.set('#b1', { opacity: 1 }, 17.1);
+chipIn('#chip4', 17.4, 18.8);
+lapOut('#lap4', 18.9, 1);
+copyOut('#copy4', 18.9);
+
+// Scene 5 — sale, stock, reports (19.4–24.6s)
+lapIn('#lap5', 19.4);
+copyIn('#copy5', 19.55);
+tapAt('#tapKitten', 20.3);
+tapAt('#tapCatnip', 20.75);
+tl.to('#s1i', { opacity: 1, duration: .25 }, 20.85);
+tapAt('#tapCheckout', 21.5);
+tl.to('#o1', { opacity: 1, duration: .3 }, 21.65);
+zoomTo('#lap5', 21.9, .8, 1.3, 100, 85);
+tl.to('#ringStock', { opacity: 1, scale: 1, duration: .45, ease: 'back.out(2)' }, 22.3)
+  .to('#ringStock', { opacity: 0, duration: .25 }, 23.15);
+chipIn('#chip5', 22.4, 24.0);
+zoomTo('#lap5', 23.2, .5, 1, 50, 50);
+tl.to('#r0', { opacity: 1, duration: .35, ease: 'power1.inOut' }, 23.25);
+lapOut('#lap5', 24.2, 0);
+copyOut('#copy5', 24.15);
+
+// Scene 6 — CTA (24.6–30s)
+steps.forEach((s, i) => tl.to(s, { opacity: 1, scale: 1, duration: .25, ease: 'back.out(2.5)' }, 24.7 + i * .12));
+tl.to('#cta-card', { y: 0, opacity: 1, scale: 1, duration: .9, ease: 'back.out(1.4)' }, 25.2)
+  .to('#cta-btn', { scale: 1, opacity: 1, duration: .7, ease: 'back.out(2)' }, 26.1)
+  .to('#cta-sub', { opacity: 1, y: 0, duration: .6 }, 26.5)
+  .to('#brand-foot', { opacity: 1, y: 0, duration: .6 }, 26.8)
+  .fromTo('#cta-btn .glow', { scale: 1, opacity: .9 }, { scale: 1.12, opacity: 0, duration: 1.1, repeat: 2, ease: 'power1.out' }, 26.8)
+  .to('#cta-btn', { scale: 1.04, duration: .55, yoyo: true, repeat: 3, ease: 'sine.inOut' }, 26.8);
+hearts.forEach((h, i) => tl.fromTo(h, { opacity: 0, scale: .3, y: 0 }, { opacity: 1, scale: 1, y: -60, duration: .5, ease: 'back.out(2)' }, 26.4 + i * .18)
+  .to(h, { y: -200, opacity: 0, duration: 1.4, ease: 'sine.out' }, 26.9 + i * .18));
+tl.to({}, { duration: .01 }, 30);
+
+window.DURATION = 30;
+window.seek = (t) => { tl.seek(t, false); };
+window.ready = Promise.all([document.fonts.ready, ...[...document.images].map((i) => i.decode().catch(() => {}))]);
+if (!params.has('render')) { tl.play(0); tl.eventCallback('onComplete', () => tl.play(0)); }
+</script>
+</body>
+</html>

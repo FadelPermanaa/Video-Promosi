@@ -5,7 +5,7 @@ Bahan untuk membuat ulang setiap video di folder [`video/`](../video): animasi, 
 | Folder | Isi |
 |---|---|
 | `brand/` | Watermark dan animasi penutup Linea.js, dipakai semua video |
-| `sparkle-wash/`, `menu-digital-warkop/`, `kasir-warkop-demo/`, `web-fnb/`, `katalog-motor/`, `linea-showreel/` | Satu folder per video: animasi (`stage.html`), musik (`audio.py`), dan screenshot |
+| `sparkle-wash/`, `menu-digital-warkop/`, `kasir-warkop-demo/`, `web-fnb/`, `katalog-motor/`, `petshop/`, `linea-showreel/` | Satu folder per video: animasi (`stage.html`), musik (`audio.py`), dan screenshot |
 | `linea-story-highlight/` | Story Instagram: naskah (`stories.js`), animasi, musik, dan cover highlight di `output/covers/` |
 | `sparkle-wash-prompt-ai/` | Prompt video AI (bukan animasi) untuk promosi Sparkle Wash |
 
@@ -33,5 +33,6 @@ github/
 ├── warkop-kedai-kopi/
 ├── web-f-b/
 ├── web-katalog-penjualan-motor-baru-bekas/
+├── Petshop/
 └── linea.js/
 ```

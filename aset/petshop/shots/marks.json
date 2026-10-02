@@ -1,0 +1,38 @@
+{
+ "tapBruno": {
+  "left": 27.2,
+  "top": 45.65
+ },
+ "tapMochi": {
+  "left": 67.85,
+  "top": 45.65
+ },
+ "ringAllergy": {
+  "left": 39.5,
+  "top": 38.3,
+  "width": 56.06,
+  "height": 3.5
+ },
+ "tapMeal": {
+  "left": 18.97,
+  "top": 67.63
+ },
+ "tapKitten": {
+  "left": 30.47,
+  "top": 39.85
+ },
+ "tapCatnip": {
+  "left": 47.67,
+  "top": 60.22
+ },
+ "tapCheckout": {
+  "left": 67.45,
+  "top": 70.88
+ },
+ "ringStock": {
+  "left": 70.85,
+  "top": 82.8,
+  "width": 25.96,
+  "height": 5.4
+ }
+}
