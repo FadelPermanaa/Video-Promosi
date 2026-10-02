@@ -2,3 +2,5 @@ frames/
 preview/
 audio.wav
 node_modules/
+output/voice-timing.json
+vo/
