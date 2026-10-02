@@ -39,6 +39,7 @@ Cara memasangnya sebagai highlight ada di [linea-story-highlight/README.md](line
 | `brand/` | Watermark dan animasi penutup Linea.js, dipakai semua video |
 | `sparkle-wash/`, `menu-digital-warkop/`, `kasir-warkop-demo/`, `web-fnb/`, `katalog-motor/`, `linea-showreel/` | Satu folder per video: animasi (`stage.html`), musik (`audio.py`), screenshot, dan hasil di `output/` |
 | `linea-story-highlight/` | Story Instagram: naskah (`stories.js`), animasi, musik, dan hasil di `output/` |
+| `sparkle-wash-prompt-ai/` | Prompt video AI (bukan animasi) untuk promosi Sparkle Wash: versi pemilik usaha dan versi pelanggan |
 
 Setiap folder punya README sendiri berisi alur video dan cara render ulang.
 
