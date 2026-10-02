@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LineaJS — showreel</title>
+<link rel="stylesheet" href="fonts/impact.css">
+<style>
+:root { --cream: #f3f0e7; --paper: #fbfaf5; --ink: #12211f; --coral: #ff513d; --lime: #d8ff45; --sky: #82c7ff; --pink: #f1bdc8; --lavender: #d8b7e8;
+  --display: 'Anton', Impact, sans-serif; --sans: 'Liberation Sans', Arial, Helvetica, sans-serif; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
+body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: antialiased; }
+#stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--cream); }
+body.v #stage { width: 1080px; height: 1920px; }
+.abs { position: absolute; }
+.full { position: absolute; inset: 0; }
+.disp { font-family: var(--display); text-transform: uppercase; line-height: .86; letter-spacing: -.01em; }
+
+/* ---------- Scene 1: type slam ---------- */
+#s1 { background: var(--ink); }
+#slam { position: absolute; left: 110px; top: 170px; color: var(--cream); font-size: 210px; }
+body.v #slam { left: 60px; top: 420px; font-size: 168px; }
+#slam .row { display: block; overflow: hidden; }
+#slam .row span { display: inline-block; }
+#slam em { font-style: normal; color: var(--lime); }
+#slam .c { color: var(--coral); }
+.ticker { position: absolute; left: 0; right: 0; height: 74px; background: var(--lime); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); overflow: hidden; }
+.ticker div { position: absolute; top: 0; left: 0; white-space: nowrap; font-family: var(--display); font-size: 40px; line-height: 70px; letter-spacing: .03em; }
+#ticker1 { bottom: 70px; transform: rotate(-2deg); }
+body.v #ticker1 { bottom: 240px; }
+#wipe { position: absolute; left: 0; right: 0; top: 0; height: 100%; background: var(--coral); }
+
+/* ---------- Browser & phone frames ---------- */
+.browser { position: absolute; border: 3px solid var(--ink); border-radius: 26px; background: var(--paper); overflow: hidden; box-shadow: 18px 22px 0 var(--ink); }
+.browser .bar { height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 22px; border-bottom: 3px solid var(--ink); background: var(--paper); }
+.browser .bar i { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--ink); display: inline-block; }
+.browser .bar i:nth-child(1) { background: var(--coral); } .browser .bar i:nth-child(2) { background: var(--lime); } .browser .bar i:nth-child(3) { background: var(--sky); }
+.browser .bar b { margin-left: 18px; flex: 1; height: 32px; border-radius: 16px; border: 2px solid var(--ink); font: 700 16px/28px var(--sans); padding-left: 16px; color: #3b4a47; }
+.browser .view { position: relative; width: 100%; aspect-ratio: 1.6; overflow: hidden; }
+.browser .view img { position: absolute; left: 0; top: 0; width: 100%; display: block; }
+#browser { width: 1180px; left: 300px; top: 175px; }
+body.v #browser { width: 980px; left: 50px; top: 760px; }
+.phone { position: absolute; width: 360px; padding: 12px; border-radius: 56px; background: var(--ink); box-shadow: 14px 18px 0 rgba(18,33,31,.35); }
+.phone .screen { position: relative; width: 100%; aspect-ratio: 390 / 844; border-radius: 44px; overflow: hidden; background: var(--cream); }
+.phone .screen img { width: 100%; display: block; }
+.phone .notch { position: absolute; left: 50%; top: 22px; width: 100px; height: 28px; margin-left: -50px; border-radius: 16px; background: var(--ink); z-index: 3; }
+#phone { left: 1420px; top: 300px; }
+body.v #phone { left: 640px; top: 1260px; width: 320px; }
+.sticker { position: absolute; padding: 14px 24px; border: 3px solid var(--ink); border-radius: 999px; font: 900 24px var(--sans); text-transform: uppercase; letter-spacing: .04em; box-shadow: 6px 7px 0 var(--ink); white-space: nowrap; }
+#sticker1 { background: var(--lime); left: 200px; top: 860px; }
+body.v #sticker1 { left: 60px; top: 1720px; }
+#sticker2 { background: var(--pink); left: 1330px; top: 130px; }
+body.v #sticker2 { left: 520px; top: 640px; }
+#cap2 { position: absolute; left: 110px; top: 60px; font-size: 64px; }
+body.v #cap2 { left: 60px; top: 260px; font-size: 120px; }
+
+/* ---------- Scene 3: work ---------- */
+#work-title { position: absolute; left: 110px; top: 80px; font-size: 140px; }
+body.v #work-title { left: 60px; top: 150px; font-size: 140px; }
+#work-title em { font-style: normal; color: var(--coral); }
+.card { position: absolute; width: 520px; padding: 14px; border: 3px solid var(--ink); border-radius: 30px; box-shadow: 12px 14px 0 var(--ink); }
+.card .img { width: 100%; aspect-ratio: 16/10; border: 2px solid var(--ink); border-radius: 18px; overflow: hidden; background: #fff; }
+.card .img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.card .meta { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding: 16px 6px 4px; }
+.card h3 { font-family: var(--display); font-size: 56px; line-height: .9; text-transform: uppercase; }
+.card p { font: 900 15px var(--sans); text-transform: uppercase; letter-spacing: .08em; text-align: right; }
+.tone-lime { background: var(--lime); } .tone-sky { background: var(--sky); } .tone-pink { background: var(--pink); } .tone-coral { background: var(--coral); }
+#count { position: absolute; right: 110px; top: 110px; font-size: 120px; color: var(--coral); }
+body.v #count { right: auto; left: 60px; top: 430px; font-size: 80px; }
+
+/* ---------- Scene 4: services ---------- */
+#s4 { background: var(--ink); color: var(--cream); }
+#svc-title { position: absolute; left: 110px; top: 90px; font-size: 130px; }
+#svc-title em { font-style: normal; color: var(--lime); }
+body.v #svc-title { left: 60px; top: 200px; font-size: 128px; }
+.svc { position: absolute; left: 110px; right: 110px; height: 132px; border-bottom: 2px solid rgba(243,240,231,.35); display: grid; grid-template-columns: 90px 1fr 520px 60px; align-items: center; gap: 24px; overflow: hidden; }
+body.v .svc { left: 60px; right: 60px; height: 190px; grid-template-columns: 70px 1fr 50px; }
+body.v .svc .copy { display: none; }
+.svc .bg { position: absolute; inset: 0; background: var(--lime); transform-origin: bottom; }
+.svc > * { position: relative; }
+.svc .n { font: 900 18px var(--sans); }
+.svc .t { font-family: var(--display); font-size: 74px; text-transform: uppercase; line-height: 1; }
+.svc .copy { font: 700 20px/1.3 var(--sans); opacity: .85; }
+.svc .arr { font-size: 46px; }
+
+/* ---------- Scene 5: pricing ---------- */
+#price-title { position: absolute; left: 110px; top: 80px; font-size: 130px; }
+#price-title em { font-style: normal; color: var(--coral); }
+body.v #price-title { left: 60px; top: 160px; font-size: 128px; }
+.pkg { position: absolute; width: 330px; height: 430px; padding: 26px; border: 3px solid var(--ink); border-radius: 28px; box-shadow: 8px 10px 0 rgba(18,33,31,.25); display: flex; flex-direction: column; }
+.pkg .k { font: 900 14px var(--sans); text-transform: uppercase; letter-spacing: .06em; }
+.pkg .pr { font-family: var(--display); font-size: 120px; line-height: 1; margin: 18px 0 8px; }
+.pkg .pr small { font: 900 16px var(--sans); margin-left: 6px; }
+.pkg .d { font: 700 17px/1.35 var(--sans); }
+.pkg .badge { position: absolute; top: -20px; right: 20px; padding: 8px 16px; border: 3px solid var(--ink); border-radius: 999px; background: var(--ink); color: var(--lime); font: 900 15px var(--sans); }
+.pkg.feat { background: var(--ink); color: var(--cream); box-shadow: 12px 14px 0 var(--coral); }
+.pkg.feat .badge { background: var(--coral); color: #fff; }
+
+/* ---------- Scene 6: CTA ---------- */
+#s6 { background: var(--lime); }
+#big { position: absolute; left: 90px; top: 360px; font-size: 470px; letter-spacing: -.03em; }
+#big em { font-style: normal; color: var(--coral); }
+body.v #big { left: 40px; top: 700px; font-size: 300px; }
+#cta-line { position: absolute; left: 110px; top: 110px; font-size: 92px; }
+body.v #cta-line { left: 60px; top: 220px; font-size: 104px; }
+#cta-btn { position: absolute; display: inline-flex; align-items: center; gap: 30px; padding: 0 44px; height: 110px; border: 3px solid var(--ink); border-radius: 999px; background: var(--coral); color: #fff; font: 900 38px var(--sans); text-transform: uppercase; box-shadow: 10px 12px 0 var(--ink); }
+body:not(.v) #cta-btn { left: 1180px; top: 150px; }
+body.v #cta-btn { left: 60px; top: 1320px; }
+#cta-sub { position: absolute; font: 900 24px var(--sans); text-transform: uppercase; letter-spacing: .06em; }
+body:not(.v) #cta-sub { left: 110px; bottom: 60px; }
+body.v #cta-sub { left: 60px; right: 60px; top: 1480px; line-height: 1.4; }
+#cat { position: absolute; width: 600px; }
+body:not(.v) #cat { right: 40px; bottom: 70px; }
+body.v #cat { right: 40px; bottom: 120px; width: 460px; }
+#logo-dot { position: absolute; width: 90px; height: 90px; border-radius: 50%; border: 3px solid var(--ink); background: var(--paper); display: grid; place-items: center; }
+#logo-dot img { width: 64px; }
+body:not(.v) #logo-dot { right: 110px; top: 300px; }
+body.v #logo-dot { left: 60px; top: 90px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- Scene 2/3/5 background is cream; others have their own layers -->
+  <div id="cap2" class="disp">Independent web studio <span style="color:var(--coral)">· Indonesia</span></div>
+  <div id="browser" class="browser"><div class="bar"><i></i><i></i><i></i><b id="url"></b></div>
+    <div class="view">
+      <img src="shots/l-hero.png" alt="">
+      <img id="v2" src="shots/l-studio.png" alt="">
+      <img id="v3" src="shots/l-work.png" alt="">
+    </div>
+  </div>
+  <div id="phone" class="phone"><div class="notch"></div><div class="screen"><img src="shots/p-hero.png" alt=""></div></div>
+  <div id="sticker1" class="sticker">Design · Code · Database · Launch</div>
+  <div id="sticker2" class="sticker">One person. The whole line.</div>
+
+  <div id="s3" class="full">
+    <div id="work-title" class="disp">Built for the<br><em>real world.</em></div>
+    <div id="count" class="disp">01/06</div>
+    <div id="cards"></div>
+  </div>
+
+  <div id="s4" class="full">
+    <div id="svc-title" class="disp">From first click<br>to <em>last detail.</em></div>
+    <div id="svcs"></div>
+  </div>
+
+  <div id="s5" class="full">
+    <div id="price-title" class="disp">Price before<br><em>the surprise.</em></div>
+    <div id="pkgs"></div>
+  </div>
+
+  <div id="s6" class="full">
+    <div id="cta-line" class="disp"></div>
+    <div id="cta-btn"><span id="cta-text"></span><span>↗</span></div>
+    <div id="big" class="disp">Linea<em>JS</em></div>
+    <img id="cat" src="../../public/cat-developer-cutout.png" alt="">
+    <div id="cta-sub"></div>
+  </div>
+
+  <div id="s1" class="full">
+    <div id="slam" class="disp"></div>
+    <div id="ticker1" class="ticker"><div id="tick"></div></div>
+  </div>
+  <div id="wipe"></div>
+</div>
+
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script>window.gsap || document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"><\/script>');</script>
+<script>
+// ---------- Text you can change, then re-render ----------
+const CONFIG = {
+  slam: ['Your business', 'deserves a site', 'that <em>works.</em>'],
+  slamVertical: ['Your', 'business', 'deserves', 'a site that', '<em>works.</em>'],
+  url: 'lineajs — independent web studio',
+  ctaLine: 'Got an idea?<br>Let’s make the first move.',
+  ctaLineVertical: 'Got an idea?<br>Let’s make<br>the first move.',
+  cta: 'Start a project',
+  ctaSub: 'Send the brief · Reply within one working day · Fixed plan & price',
+};
+const PROJECTS = [
+  ['King Paddle', 'Booking system', 'king-paddle-1.webp', 'lime'],
+  ['Apotek Berkah', 'Point of sale', 'apotek-3.webp', 'sky'],
+  ['Heavy Equipment', 'Fleet management', 'fleet-operations-1.webp', 'pink'],
+  ['Brownies Pastry', 'Ordering platform', 'pastry-2.webp', 'coral'],
+  ['Jawa Motor', 'Catalogue & CRM', 'motor-1.webp', 'sky'],
+  ['Grand Palace', 'Invitation store', 'invitation-1.webp', 'lime'],
+];
+const SERVICES = [
+  ['01', 'Launch sites', 'A sharp, fast page for a new product, campaign, or company.'],
+  ['02', 'Commerce & booking', 'Ordering, scheduling, payment, and admin flows that fit the business.'],
+  ['03', 'Internal tools', 'Dashboards that replace scattered sheets and chat threads.'],
+  ['04', 'AI systems', 'Useful agents with clear boundaries and human escalation.'],
+];
+const PACKAGES = [
+  ['Company profile', '2JT', 'A polished site that turns visitors into enquiries.', 'sky'],
+  ['F&B ordering', '5JT', 'Digital menu and ordering shaped around the kitchen.', 'lime'],
+  ['POS cashier', '3JT', 'Faster transactions and clearer daily records.', 'pink'],
+  ['Web app', '5JT', 'A database-backed system built around your team.', 'paper'],
+  ['Custom app', '7JT', 'Complex workflows, integrations and automation.', 'feat'],
+];
+
+const params = new URLSearchParams(location.search);
+const VERTICAL = params.get('f') === 'v';
+if (VERTICAL) document.body.classList.add('v');
+const W = VERTICAL ? 1080 : 1920;
+const H = VERTICAL ? 1920 : 1080;
+function fit() { const s = Math.min(innerWidth / W, innerHeight / H); const st = document.getElementById('stage'); st.style.transformOrigin = '0 0'; st.style.transform = params.has('render') ? 'none' : `scale(${s})`; }
+fit(); addEventListener('resize', fit);
+const $ = (s) => document.querySelector(s);
+
+$('#slam').innerHTML = (VERTICAL ? CONFIG.slamVertical : CONFIG.slam).map((r) => `<span class="row"><span>${r}</span></span>`).join('');
+$('#url').textContent = CONFIG.url;
+$('#cta-line').innerHTML = VERTICAL ? CONFIG.ctaLineVertical : CONFIG.ctaLine;
+$('#cta-text').textContent = CONFIG.cta;
+$('#cta-sub').textContent = CONFIG.ctaSub;
+$('#tick').textContent = ('INTERFACES + APIS + DATABASES + MOTION + PERFORMANCE + ').repeat(6);
+
+// Project cards: fanned stack (16:9) or vertical stack (9:16)
+const CARD_POS = VERTICAL
+  ? [[50, 560, -4], [540, 650, 3], [50, 960, 2], [540, 1050, -3], [50, 1360, -2], [540, 1450, 3]]
+  : [[110, 400, -4], [700, 330, 2], [1290, 400, -3], [200, 640, 3], [790, 600, -2], [1340, 640, 4]];
+const cards = PROJECTS.map(([t, k, img, tone], i) => {
+  const el = document.createElement('div');
+  el.className = `card tone-${tone}`;
+  el.innerHTML = `<div class="img"><img src="../../public/projects/gallery/${img}" alt=""></div><div class="meta"><h3>${t}</h3><p>${k}</p></div>`;
+  const [x, y, r] = CARD_POS[i];
+  Object.assign(el.style, { left: x + 'px', top: y + 'px', width: (VERTICAL ? 470 : 520) + 'px', transform: `rotate(${r}deg)` });
+  $('#cards').appendChild(el);
+  return el;
+});
+const svcs = SERVICES.map(([n, t, c], i) => {
+  const el = document.createElement('div');
+  el.className = 'svc';
+  el.innerHTML = `<div class="bg"></div><span class="n">${n}</span><span class="t">${t}</span><span class="copy">${c}</span><span class="arr">↗</span>`;
+  el.style.top = ((VERTICAL ? 720 : 430) + i * (VERTICAL ? 200 : 140)) + 'px';
+  $('#svcs').appendChild(el);
+  return el;
+});
+const PKG_POS = VERTICAL
+  ? [[60, 560], [560, 560], [60, 1050], [560, 1050], [310, 1460]]
+  : [[110, 470], [460, 450], [810, 470], [1160, 450], [1510, 430]];
+const pkgs = PACKAGES.map(([k, pr, d, tone], i) => {
+  const el = document.createElement('div');
+  el.className = 'pkg' + (tone === 'feat' ? ' feat' : ' tone-' + tone);
+  if (tone === 'paper') el.style.background = 'var(--paper)';
+  el.innerHTML = `${tone === 'feat' ? '<span class="badge">BEST VALUE</span>' : ''}<span class="k">0${i + 1} / ${k}</span><span class="pr">${pr}<small>IDR+</small></span><span class="d">${d}</span>`;
+  const [x, y] = PKG_POS[i];
+  Object.assign(el.style, { left: x + 'px', top: y + 'px', width: (VERTICAL ? 460 : 330) + 'px', height: (VERTICAL ? 400 : 430) + 'px' });
+  $('#pkgs').appendChild(el);
+  return el;
+});
+
+// ---------- Timeline ----------
+gsap.defaults({ ease: 'power3.out' });
+const tl = gsap.timeline({ paused: true });
+const set = (sel, v) => gsap.set(sel, v);
+
+set('#slam .row > span', { yPercent: 105 });
+set('#wipe', { yPercent: 100 });
+set('#browser', { y: 900, rotation: 4 });
+set('#phone', { x: 700, rotation: 8 });
+set('#cap2', { y: 60, opacity: 0 });
+set('.sticker', { scale: 0 });
+set('#v2, #v3', { opacity: 0 });
+set('#s3, #s4, #s5, #s6', { visibility: 'hidden' });
+set('#work-title, #count', { y: 80, opacity: 0 });
+set('.card', { y: 1200 });
+set('#svc-title', { y: 80, opacity: 0 });
+set('.svc', { x: -300, opacity: 0 });
+set('.svc .bg', { scaleY: 0 });
+set('#price-title', { y: 80, opacity: 0 });
+set('.pkg', { y: 900, rotation: () => (Math.random() - .5) * 0 });
+set('#cta-line, #cta-sub', { y: 60, opacity: 0 });
+set('#cta-btn', { scale: 0 });
+set('#big', { yPercent: 40, opacity: 0 });
+set('#cat', { y: 600, rotation: 12 });
+
+// Scene 1 — type slam (0–3.6s)
+tl.to('#slam .row > span', { yPercent: 0, duration: .55, stagger: .32, ease: 'power4.out' }, .15)
+  .fromTo('#tick', { x: 0 }, { x: -1600, duration: 4, ease: 'none' }, 0)
+  .to('#slam', { scale: 1.04, transformOrigin: '0% 50%', duration: 3.4, ease: 'none' }, .2)
+  .to('#wipe', { yPercent: 0, duration: .5, ease: 'power3.in' }, 3.1)
+  .set('#s1', { visibility: 'hidden' }, 3.62)
+  .to('#wipe', { yPercent: -100, duration: .55, ease: 'power3.inOut' }, 3.65);
+
+// Scene 2 — the site (3.6–9s)
+tl.to('#cap2', { y: 0, opacity: 1, duration: .6 }, 3.9)
+  .to('#browser', { y: 0, rotation: -1.5, duration: 1.0, ease: 'back.out(1.2)' }, 3.95)
+  .to('#phone', { x: 0, rotation: 4, duration: .9, ease: 'back.out(1.3)' }, 4.5)
+  .to('#sticker1', { scale: 1, duration: .5, ease: 'back.out(2.5)' }, 5.1)
+  .to('#sticker2', { scale: 1, duration: .5, ease: 'back.out(2.5)' }, 6.3)
+  .to('#v2', { opacity: 1, duration: .35, ease: 'none' }, 6.2)
+  .to('#v3', { opacity: 1, duration: .35, ease: 'none' }, 7.4)
+  .to('#browser .view img', { scale: 1.05, transformOrigin: '50% 30%', duration: 5, ease: 'none' }, 4.2)
+  .to('#browser', { y: -1200, rotation: -6, duration: .8, ease: 'power3.in' }, 8.5)
+  .to('#phone', { x: 800, duration: .7, ease: 'power3.in' }, 8.4)
+  .to('.sticker, #cap2', { scale: 0, opacity: 0, duration: .4, ease: 'power2.in' }, 8.4)
+  .set('#browser, #phone, .sticker, #cap2', { visibility: 'hidden' }, 9.35);
+
+// Scene 3 — selected work (9–14.6s)
+tl.set('#s3', { visibility: 'visible' }, 8.95)
+  .to('#work-title, #count', { y: 0, opacity: 1, duration: .6, stagger: .1 }, 9.0);
+cards.forEach((c, i) => {
+  const at = 9.5 + i * .55;
+  tl.to(c, { y: 0, duration: .7, ease: 'back.out(1.2)' }, at)
+    .add(() => {}, at);
+});
+const counter = { n: 1 };
+tl.to(counter, { n: 6, duration: 2.75, ease: 'none', onUpdate: () => { $('#count').textContent = `0${Math.round(counter.n)}/06`; } }, 9.5)
+  .to('.card', { y: '-=30', duration: 1.6, ease: 'sine.inOut' }, 12.4)
+  .to('#s3', { yPercent: -100, duration: .7, ease: 'power3.in' }, 14.0)
+  .set('#s3', { visibility: 'hidden' }, 14.7);
+
+// Scene 4 — services (14.6–19.4s)
+tl.set('#s4', { visibility: 'visible' }, 14.0)
+  .fromTo('#s4', { yPercent: 100 }, { yPercent: 0, duration: .7, ease: 'power3.in' }, 14.0)
+  .to('#svc-title', { y: 0, opacity: 1, duration: .6 }, 14.8);
+svcs.forEach((s, i) => {
+  tl.to(s, { x: 0, opacity: 1, duration: .6 }, 15.2 + i * .15)
+    .to(s.querySelector('.bg'), { scaleY: 1, duration: .35, ease: 'power2.out' }, 16.2 + i * .55)
+    .to(s, { color: '#12211f', duration: .2 }, 16.2 + i * .55)
+    .to(s.querySelector('.bg'), { scaleY: 0, duration: .3, ease: 'power2.in' }, 16.65 + i * .55)
+    .to(s, { color: '#f3f0e7', duration: .2 }, 16.7 + i * .55);
+});
+tl.to('#s4', { xPercent: -100, duration: .7, ease: 'power3.in' }, 19.0)
+  .set('#s4', { visibility: 'hidden' }, 19.7);
+
+// Scene 5 — pricing (19.4–24.6s)
+tl.set('#s5', { visibility: 'visible' }, 19.3)
+  .to('#price-title', { y: 0, opacity: 1, duration: .6 }, 19.6);
+pkgs.forEach((p, i) => tl.to(p, { y: 0, rotation: [-3, 2, -2, 3, -1][i], duration: .8, ease: 'back.out(1.3)' }, 20.0 + i * .2));
+tl.to(pkgs[4], { scale: 1.06, duration: .3, yoyo: true, repeat: 1, ease: 'sine.inOut' }, 22.0)
+  .to('.pkg', { y: '-=20', duration: 1.5, ease: 'sine.inOut' }, 22.5)
+  .to('#s5', { yPercent: 100, duration: .7, ease: 'power3.in' }, 24.0)
+  .set('#s5', { visibility: 'hidden' }, 24.7);
+
+// Scene 6 — CTA (24.6–30s)
+tl.set('#s6', { visibility: 'visible' }, 24.0)
+  .fromTo('#s6', { clipPath: 'circle(0% at 50% 50%)' }, { clipPath: 'circle(150% at 50% 50%)', duration: .9, ease: 'power3.inOut' }, 24.1)
+  .to('#big', { yPercent: 0, opacity: 1, duration: .9, ease: 'power4.out' }, 24.6)
+  .to('#cta-line', { y: 0, opacity: 1, duration: .7 }, 25.0)
+  .to('#cat', { y: 0, rotation: -4, duration: 1.0, ease: 'back.out(1.4)' }, 25.3)
+  .to('#cta-btn', { scale: 1, duration: .6, ease: 'back.out(2.2)' }, 25.9)
+  .to('#cta-sub', { y: 0, opacity: 1, duration: .6 }, 26.4)
+  .to('#cta-btn', { scale: 1.05, duration: .5, yoyo: true, repeat: 3, ease: 'sine.inOut' }, 26.8)
+  .to('#cat', { y: -16, duration: .9, yoyo: true, repeat: 2, ease: 'sine.inOut' }, 26.3);
+tl.to({}, { duration: .01 }, 30);
+
+window.DURATION = 30;
+window.seek = (t) => { tl.seek(t, false); };
+window.ready = Promise.all([document.fonts.ready, ...[...document.images].map((i) => i.decode().catch(() => {}))]);
+if (!params.has('render')) { tl.play(0); tl.eventCallback('onComplete', () => tl.play(0)); }
+</script>
+</body>
+</html>

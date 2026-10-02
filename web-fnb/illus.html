@@ -1,0 +1,66 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: transparent; }
+  svg { display: block; }
+</style></head>
+<body>
+<svg id="art" width="800" height="600" viewBox="0 0 800 600"></svg>
+<script>
+// Flat food illustrations for demo product photos (4:3).
+const plate = (inner) => `
+  <ellipse cx="400" cy="330" rx="250" ry="210" fill="rgba(60,30,10,.12)"/>
+  <ellipse cx="400" cy="312" rx="250" ry="210" fill="#fff"/>
+  <ellipse cx="400" cy="312" rx="200" ry="168" fill="#f6f1ea"/>${inner}`;
+const rice = (x, y, s = 1) => `<g transform="translate(${x} ${y}) scale(${s})">
+  <path d="M-110 30 C-120 -40 -60 -90 0 -92 C70 -94 125 -40 112 30 C80 52 -80 54 -110 30Z" fill="#fffdf7" stroke="#e9e1d2" stroke-width="4"/>
+  ${Array.from({ length: 22 }, (_, i) => `<ellipse cx="${-80 + (i * 37) % 170}" cy="${-60 + (i * 23) % 80}" rx="9" ry="4" fill="#efe7d8" transform="rotate(${(i * 47) % 180} ${-80 + (i * 37) % 170} ${-60 + (i * 23) % 80})"/>`).join('')}</g>`;
+const leaf = (x, y, r = 0, c = '#5d9b47') => `<path transform="translate(${x} ${y}) rotate(${r})" d="M0 0 C20 -30 60 -30 80 0 C60 30 20 30 0 0Z" fill="${c}"/><path transform="translate(${x} ${y}) rotate(${r})" d="M4 0 L76 0" stroke="#3f7a2e" stroke-width="3"/>`;
+const cucumber = (x, y) => [0, 1, 2].map((i) => `<circle cx="${x + i * 30}" cy="${y + i * 6}" r="22" fill="#9ccc65" stroke="#4e8a2f" stroke-width="5"/><circle cx="${x + i * 30}" cy="${y + i * 6}" r="10" fill="#e6f3c8"/>`).join('');
+const sambal = (x, y, c = '#d6402c') => `<circle cx="${x}" cy="${y}" r="38" fill="#fff" stroke="#e3dbcf" stroke-width="4"/><circle cx="${x}" cy="${y}" r="30" fill="${c}"/>${[0,1,2,3].map(i => `<circle cx="${x - 12 + i * 8}" cy="${y - 6 + (i % 2) * 12}" r="4" fill="#f7c948"/>`).join('')}`;
+const chicken = (x, y, glaze = '#b5562a') => `<g transform="translate(${x} ${y})">
+  <path d="M-80 10 C-90 -50 -20 -80 40 -60 C90 -45 100 10 70 40 C30 70 -60 60 -80 10Z" fill="${glaze}"/>
+  <path d="M-60 0 C-50 -40 0 -55 40 -42" stroke="#7a2f12" stroke-width="10" fill="none" stroke-linecap="round" opacity=".55"/>
+  <path d="M-40 30 C-10 10 30 10 55 22" stroke="#e08a4a" stroke-width="8" fill="none" stroke-linecap="round" opacity=".7"/>
+  <rect x="62" y="-28" width="60" height="20" rx="10" fill="#f3e3c8" transform="rotate(20 62 -28)"/></g>`;
+const rendang = (x, y) => `<g transform="translate(${x} ${y})">${[[-50, -10], [10, -30], [40, 20], [-20, 30], [-70, 30]].map(([a, b], i) => `<path transform="translate(${a} ${b}) rotate(${i * 40})" d="M-34 -6 C-30 -30 20 -34 34 -14 C40 10 10 30 -16 26 C-36 22 -38 6 -34 -6Z" fill="${i % 2 ? '#5a2615' : '#6e2f18'}"/>`).join('')}
+  ${Array.from({ length: 14 }, (_, i) => `<circle cx="${-80 + (i * 29) % 150}" cy="${-30 + (i * 17) % 70}" r="5" fill="#a7552a"/>`).join('')}</g>`;
+const geprek = (x, y) => `<g transform="translate(${x} ${y})">
+  <path d="M-95 10 C-100 -45 -30 -70 30 -62 C95 -55 110 0 85 35 C45 70 -75 62 -95 10Z" fill="#e2a24a"/>
+  ${Array.from({ length: 16 }, (_, i) => `<path d="M${-80 + (i * 31) % 160} ${-40 + (i * 19) % 80} l12 -6 l6 10 z" fill="#c9832e"/>`).join('')}
+  <path d="M-60 -20 C-20 -40 40 -30 70 -5 C40 20 -30 25 -60 -20Z" fill="#d93d27" opacity=".92"/>
+  ${Array.from({ length: 10 }, (_, i) => `<circle cx="${-40 + i * 11}" cy="${-14 + (i % 3) * 6}" r="4" fill="${i % 2 ? '#f6d04d' : '#fff3c4'}"/>`).join('')}</g>`;
+const box = (inner) => `
+  <rect x="150" y="150" width="500" height="330" rx="26" fill="rgba(60,30,10,.14)" transform="translate(0 16)"/>
+  <rect x="150" y="150" width="500" height="330" rx="26" fill="#c99560"/>
+  <rect x="172" y="172" width="456" height="286" rx="16" fill="#fff8ee"/>
+  <path d="M400 172 V458 M400 315 H628" stroke="#e7d6bf" stroke-width="8"/>${inner}`;
+const glass = (drink, top, ice = true, extra = '') => `
+  <ellipse cx="400" cy="530" rx="130" ry="22" fill="rgba(60,30,10,.14)"/>
+  <path d="M290 120 L510 120 L486 520 Q484 536 468 536 L332 536 Q316 536 314 520Z" fill="rgba(255,255,255,.55)" stroke="#e7e1d8" stroke-width="6"/>
+  <path d="M298 200 L502 200 L486 520 Q484 530 468 530 L332 530 Q316 530 314 520Z" fill="${drink}"/>
+  ${top ? `<path d="M298 200 L502 200 L497 262 L303 262Z" fill="${top}"/>` : ''}
+  ${ice ? [[340, 230, 12], [420, 250, -10], [370, 300, 20]].map(([x, y, r]) => `<rect x="${x}" y="${y}" width="58" height="58" rx="10" fill="rgba(255,255,255,.55)" transform="rotate(${r} ${x + 29} ${y + 29})"/>`).join('') : ''}
+  <rect x="430" y="40" width="20" height="300" rx="10" fill="#f2f2f2" transform="rotate(12 440 190)"/><rect x="430" y="40" width="20" height="60" rx="10" fill="#e46b5a" transform="rotate(12 440 190)"/>
+  ${extra}`;
+
+const ART = {
+  'ayam-bakar': ['#fde8d5', plate(rice(320, 330, .95) + chicken(470, 300) + cucumber(300, 420) + leaf(250, 240, -30) + sambal(520, 430))],
+  'rendang': ['#f7e3d3', plate(rice(320, 320, .95) + rendang(480, 300) + leaf(400, 430, 10, '#6aa84f') + leaf(260, 410, 160, '#6aa84f'))],
+  'geprek': ['#fff0d6', plate(rice(300, 330, .9) + geprek(480, 300) + cucumber(340, 430) + leaf(560, 420, 20))],
+  'nasi-box': ['#efe6dc', box(rice(286, 320, .82) + chicken(520, 250, '#a8471f').replace('translate(520 250)', 'translate(520 250) scale(.6)') + `<g transform="translate(520 390) scale(.7)">${cucumber(-40, 0)}</g>` + sambal(560, 400, '#cf3b26').replace(/r="38"/, 'r="30"').replace(/r="30" fill="#cf/, 'r="22" fill="#cf'))],
+  'tumpeng': ['#fff3c9', plate(`<path d="M400 120 L520 400 Q400 430 280 400Z" fill="#f2c230"/><path d="M400 120 L520 400 Q400 430 280 400Z" fill="url(#g)" opacity=".2"/>` + leaf(240, 400, -20) + leaf(500, 400, 20) + `<circle cx="260" cy="330" r="30" fill="#fff8e6" stroke="#e6d5b0" stroke-width="4"/><circle cx="260" cy="330" r="13" fill="#f2b530"/>` + chicken(560, 330).replace('translate(560 330)', 'translate(560 330) scale(.55)') + `<path d="M380 112 l20 -40 l20 40z" fill="#d93d27"/>`)],
+  'es-teh': ['#fbe9d6', glass('#b5651d', null)],
+  'kopi-aren': ['#efe1d1', glass('#8a5634', '#f4e6d2', true, `<path d="M300 380 C340 360 460 400 494 372 L486 520 Q484 530 468 530 L332 530 Q316 530 314 520Z" fill="#6b3b1f" opacity=".75"/>`)],
+  'es-jeruk': ['#fff1cc', glass('#f6a623', null, true, `<circle cx="300" cy="140" r="52" fill="#f7b733" stroke="#fff" stroke-width="8"/>${[0,1,2,3,4,5].map(i => `<path d="M300 140 L${300 + 44 * Math.cos(i * Math.PI / 3)} ${140 + 44 * Math.sin(i * Math.PI / 3)}" stroke="#fff" stroke-width="5"/>`).join('')}`)],
+};
+
+window.draw = (key) => {
+  const [bg, body] = ART[key];
+  document.getElementById('art').innerHTML = `<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient></defs>
+    <rect width="800" height="600" fill="${bg}"/>
+    <circle cx="690" cy="90" r="160" fill="#fff" opacity=".35"/><circle cx="90" cy="560" r="140" fill="#fff" opacity=".3"/>${body}`;
+};
+window.KEYS = Object.keys(ART);
+</script>
+</body></html>
