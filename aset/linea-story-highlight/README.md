@@ -9,7 +9,7 @@ Every visual is new: there are no screenshots of the website. The project screen
 | Highlight | Video | Length | Cover |
 |---|---|---|---|
 | Tentang | `output/1-tentang.mp4` | 31 s | `output/covers/tentang.png` |
-| Layanan | `output/2-layanan.mp4` | 38 s | `output/covers/layanan.png` |
+| Layanan | `output/2-layanan.mp4` | 46 s | `output/covers/layanan.png` |
 | Karya | `output/3-karya.mp4` | 52 s | `output/covers/karya.png` |
 | Bedanya Apa? | `output/4-bedanya.mp4` | 52 s | `output/covers/bedanya.png` |
 | Proses | `output/5-proses.mp4` | 38 s | `output/covers/proses.png` |

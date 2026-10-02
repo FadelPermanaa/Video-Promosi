@@ -63,13 +63,13 @@ Enam highlight, urut dari kiri ke kanan di profil:
 | # | Highlight | Ikon cover | Jumlah story |
 |---|---|---|---|
 | 1 | **Tentang** | tanda X | 4 |
-| 2 | **Layanan** | kotak-kotak (grid) | 5 |
+| 2 | **Layanan** | kotak-kotak (grid) | 6 |
 | 3 | **Karya** | bintang/medali | 7 |
 | 4 | **Bedanya Apa?** | dua kolom | 8 |
 | 5 | **Proses** | anak panah melingkar | 5 |
 | 6 | **Tanya & Kontak** | gelembung chat | 5 |
 
-**Total 34 story**, kira-kira 2,5–3 menit kalau semua ditonton.
+**Total 35 story**, kira-kira 2,5–3 menit kalau semua ditonton.
 
 ---
 
@@ -94,21 +94,24 @@ Teks di bawah adalah teks yang **tampil di layar**. Bagian dalam kurung adalah a
 
 ### Highlight 2 — Layanan
 
-Fokus ke empat hal yang paling dicari usaha: website F&B, kasir, dashboard, dan web app. Tidak ada layanan AI.
+Fokus ke lima hal yang paling dicari usaha: website F&B, booking, kasir, dashboard, dan web app. Tidak ada layanan AI. Urutannya sama dengan highlight "Bedanya Apa?".
 
-1. **"Bisa bikin apa saja?"** (Empat kartu layanan berputar masuk.)
+1. **"Bisa bikin apa saja?"** (Lima kartu layanan berputar masuk.)
 2. **"01 · Website & pemesanan F&B"**
    *Menu digital, pesan dari HP atau langsung dari meja, bayar QRIS, dan kuota dapur per hari.*
    Label: menu digital · QR meja · QRIS
-3. **"02 · Sistem kasir"**
+3. **"02 · Sistem booking"**
+   *Pelanggan pilih jadwal yang masih kosong, bayar di muka, dan slotnya langsung terkunci. Untuk lapangan olahraga, salon, grooming, atau klinik.*
+   Label: jadwal real-time · bayar di muka · member
+4. **"03 · Sistem kasir"**
    *Transaksi cepat, cetak struk, stok berkurang otomatis, dan tutup kasir tiap hari. Tetap jalan tanpa internet.*
    Label: struk · stok · bisa offline
-4. **"03 · Dashboard usaha"**
+5. **"04 · Dashboard usaha"**
    *Penjualan, stok, dan kinerja karyawan dalam satu layar. Laporan siap diunduh ke Excel.*
    Label: laporan · akun karyawan · Excel
-5. **"04 · Web app"**
-   *Sistem web sesuai alur kerja usahamu: booking, katalog, sampai operasional. Buka dari HP atau laptop, tanpa install.*
-   Label: booking · katalog · operasional
+6. **"05 · Web app"**
+   *Sistem web sesuai alur kerja usahamu: katalog, manajemen armada, sampai operasional. Buka dari HP atau laptop, tanpa install.*
+   Label: katalog · operasional · tanpa install
    (Animasi penutup logo.)
 
 ### Highlight 3 — Karya
@@ -196,7 +199,7 @@ Ditampilkan setelah Karya. Menjelaskan bedanya setiap layanan dengan satu pertan
 | Identitas | Linea JS — studio web independen, satu orang, dari Indonesia. "Websites that keep business moving." |
 | Prinsip | No page builders. No mystery retainers. No vanishing after launch. |
 | Angka | 10+ projects shipped · 2 years building · 98 average Lighthouse · <6h typical reply |
-| Layanan (di video) | Website & pemesanan F&B · Sistem kasir · Dashboard usaha · Web app |
+| Layanan (di video) | Website & pemesanan F&B · Sistem booking · Sistem kasir · Dashboard usaha · Web app |
 | Proses | Send the brief → I reply with a direction (1 hari kerja) → We align for 30 minutes → You get the fixed plan |
 | Kepemilikan | Repository, domain, database, akun, desain, dokumentasi diserahkan |
 | Waktu | Landing page 1–2 minggu. Produk dengan akun/pembayaran 4–8 minggu |

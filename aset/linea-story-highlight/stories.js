@@ -15,11 +15,12 @@ window.STORIES = {
     {
       "id": "layanan", "title": "Layanan", "icon": "grid",
       "stories": [
-        { "type": "intro", "d": 5.5, "title": "Bisa bikin <em>apa saja?</em>", "sub": "Empat hal yang paling sering kami kerjakan untuk usaha.", "cards": ["Website & pemesanan F&B", "Sistem kasir (POS)", "Dashboard usaha", "Web app"], "cardIcons": ["food", "pos", "dash", "app"] },
+        { "type": "intro", "d": 5.5, "title": "Bisa bikin <em>apa saja?</em>", "sub": "Lima hal yang paling sering kami kerjakan untuk usaha.", "cards": ["Website & pemesanan F&B", "Sistem booking", "Sistem kasir (POS)", "Dashboard usaha", "Web app"], "cardIcons": ["food", "cal", "pos", "dash", "app"] },
         { "type": "service", "d": 6.5, "n": "01", "icon": "food", "title": "Website <em>& pemesanan F&B</em>", "body": "Menu digital, pesan dari HP atau langsung dari meja, bayar QRIS, dan kuota dapur per hari.", "tags": ["menu digital", "QR meja", "QRIS"] },
-        { "type": "service", "d": 6.5, "n": "02", "icon": "pos", "title": "Sistem <em>kasir</em>", "body": "Transaksi cepat, cetak struk, stok berkurang otomatis, dan tutup kasir tiap hari. Tetap jalan tanpa internet.", "tags": ["struk", "stok", "bisa offline"] },
-        { "type": "service", "d": 6.5, "n": "03", "icon": "dash", "title": "Dashboard <em>usaha</em>", "body": "Penjualan, stok, dan kinerja karyawan dalam satu layar. Laporan siap diunduh ke Excel.", "tags": ["laporan", "akun karyawan", "Excel"] },
-        { "type": "service", "d": 6.5, "n": "04", "icon": "app", "title": "Web <em>app</em>", "body": "Sistem web sesuai alur kerja usahamu: booking, katalog, sampai operasional. Buka dari HP atau laptop, tanpa install.", "tags": ["booking", "katalog", "operasional"] }
+        { "type": "service", "d": 6.5, "n": "02", "icon": "cal", "title": "Sistem <em>booking</em>", "body": "Pelanggan pilih jadwal yang masih kosong, bayar di muka, dan slotnya langsung terkunci. Untuk lapangan olahraga, salon, grooming, atau klinik.", "tags": ["jadwal real-time", "bayar di muka", "member"] },
+        { "type": "service", "d": 6.5, "n": "03", "icon": "pos", "title": "Sistem <em>kasir</em>", "body": "Transaksi cepat, cetak struk, stok berkurang otomatis, dan tutup kasir tiap hari. Tetap jalan tanpa internet.", "tags": ["struk", "stok", "bisa offline"] },
+        { "type": "service", "d": 6.5, "n": "04", "icon": "dash", "title": "Dashboard <em>usaha</em>", "body": "Penjualan, stok, dan kinerja karyawan dalam satu layar. Laporan siap diunduh ke Excel.", "tags": ["laporan", "akun karyawan", "Excel"] },
+        { "type": "service", "d": 6.5, "n": "05", "icon": "app", "title": "Web <em>app</em>", "body": "Sistem web sesuai alur kerja usahamu: katalog, manajemen armada, sampai operasional. Buka dari HP atau laptop, tanpa install.", "tags": ["katalog", "operasional", "tanpa install"] }
       ]
     },
     {
