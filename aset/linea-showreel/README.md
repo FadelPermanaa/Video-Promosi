@@ -18,13 +18,13 @@ Every video carries the **Linea.js corner watermark** from the first frame (bott
 | 0–3.6 | Type slam on ink: *"Your business deserves a site that works."* with the INTERFACES + APIS + DATABASES ticker |
 | 3.6–9 | The site in a browser and a phone: hero, studio idea, services |
 | 9–14.6 | *"Built for the real world."* — five project cards land one by one (01/05 → 05/05), named by the kind of system, not by client |
-| 14.6–19.4 | *"From first click to last detail."* — the four services light up in lime |
+| 14.6–19.4 | *"From first click to last detail."* — the four services (F&B ordering, POS cashier, dashboards, web apps) light up in lime |
 | 19.4–24.6 | *"Price before the surprise."* — the five starting prices, Custom app marked best value |
 | 24.6–30 | Lime CTA: *"Got an idea? Let's make the first move."*, **Start a project ↗**, the cat |
 
 ## Change the text and render again
 
-All copy is at the top of the `<script>` in [stage.html](stage.html): `CONFIG` (opening lines, CTA), `PROJECTS`, `SERVICES` and `PACKAGES`. Keep services and prices in step with `app/page.tsx`; keep project names generic (no client brands).
+All copy is at the top of the `<script>` in [stage.html](stage.html): `CONFIG` (opening lines, CTA), `PROJECTS`, `SERVICES` and `PACKAGES`. Services follow the studio focus (F&B ordering, POS cashier, dashboards, web apps), not the full list on the site; keep prices in step with `app/page.tsx` and project names generic (no client brands).
 
 ```bash
 cd linea-showreel
