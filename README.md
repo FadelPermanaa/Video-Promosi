@@ -57,7 +57,7 @@ Screenshot yang dipakai sudah tersimpan di folder `shots/` masing-masing, jadi r
 
 ```
 github/
-├── linea-video-promosi/
+├── video-promosi/
 ├── Washing-Service/
 ├── warkop-kedai-kopi/
 ├── web-f-b/
