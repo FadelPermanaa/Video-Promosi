@@ -22,7 +22,7 @@ from array import array
 SR = 44100
 TAU = 2 * math.pi
 HERE = os.path.dirname(os.path.abspath(__file__))
-KEYS = {'tentang': 0, 'layanan': 2, 'karya': 3, 'proses': 5, 'kontak': 7}  # semitones above A
+KEYS = {'tentang': 0, 'layanan': 2, 'karya': 3, 'bedanya': 4, 'proses': 5, 'kontak': 7}  # semitones above A
 
 
 def midi(m):

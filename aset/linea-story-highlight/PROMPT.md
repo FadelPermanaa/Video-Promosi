@@ -58,17 +58,18 @@ Orang yang baru mampir ke profil @linea.js bisa paham dalam **±1 menit per high
 
 ## 4. Struktur highlight
 
-Lima highlight, urut dari kiri ke kanan di profil:
+Enam highlight, urut dari kiri ke kanan di profil:
 
 | # | Highlight | Ikon cover | Jumlah story |
 |---|---|---|---|
 | 1 | **Tentang** | tanda X | 4 |
 | 2 | **Layanan** | kotak-kotak (grid) | 5 |
 | 3 | **Karya** | bintang/medali | 7 |
-| 4 | **Proses** | anak panah melingkar | 5 |
-| 5 | **Tanya & Kontak** | gelembung chat | 5 |
+| 4 | **Bedanya Apa?** | dua kolom | 8 |
+| 5 | **Proses** | anak panah melingkar | 5 |
+| 6 | **Tanya & Kontak** | gelembung chat | 5 |
 
-**Total 26 story**, kira-kira 2,5–3 menit kalau semua ditonton.
+**Total 34 story**, kira-kira 2,5–3 menit kalau semua ditonton.
 
 ---
 
@@ -129,7 +130,27 @@ Setiap proyek digambar ulang sebagai **ilustrasi/mockup baru**, bukan screenshot
    Sub: *Semuanya dibentuk dari apa yang terjadi setelah pelanggan menekan tombol.*
    (Animasi penutup logo.)
 
-### Highlight 4 — Proses
+### Highlight 4 — Bedanya Apa?
+
+Ditampilkan setelah Karya. Menjelaskan bedanya setiap layanan dengan satu pertanyaan sederhana: **siapa yang memakainya**.
+
+1. **"Website, booking, kasir, dashboard, web app. Bedanya apa?"**
+   Sub: *Gampangnya: lihat siapa yang memakainya.*
+2. **Website F&B, untuk pesan makanan** (dipakai pelanggan)
+   *Pelanggan pesan dan bayar sendiri dari HP, dari rumah atau langsung dari meja. Kamu tinggal masak.*
+3. **Sistem booking, untuk pesan jadwal** (dipakai pelanggan)
+   *Pelanggan pilih jam kosong, bayar, dan slotnya langsung terkunci. Cocok untuk lapangan, salon, grooming.*
+4. **Kasir, untuk karyawan** (dipakai kasir)
+   *Mencatat penjualan di toko: struk tercetak, stok berkurang, dan uang di laci selalu cocok.*
+5. **Dashboard, untuk pemilik** (dipakai pemilik)
+   *Bukan untuk mencatat, tapi memantau: omzet hari ini, menu terlaris, stok menipis, dari mana saja.*
+6. **"Semuanya saling terhubung."** Pelanggan pesan → Kasir mencatat → Pemilik memantau.
+7. **Web app, untuk alur yang unik** (sesuai kebutuhan)
+   *Katalog, manajemen armada, sampai operasional. Kalau alur usahamu beda dari biasanya, sistemnya kami buat mengikuti alurmu.*
+8. **"Bingung pilih yang mana? Ceritakan usahamu."** Tombol Kirim DM.
+   (Animasi penutup logo.)
+
+### Highlight 5 — Proses
 
 1. **"Dari 'aku punya ide' sampai rencana jelas, cuma 4 langkah."**
 2. **"01 · Kirim brief"**
@@ -142,7 +163,7 @@ Setiap proyek digambar ulang sebagai **ilustrasi/mockup baru**, bukan screenshot
    *Ruang lingkup, jadwal, harga, dan milestone pertama. Tinggal setujui atau tidak.*
    (Stempel "SIAP", lalu animasi penutup logo.)
 
-### Highlight 5 — Tanya & Kontak
+### Highlight 6 — Tanya & Kontak
 
 1. **"Siapa yang punya hasilnya?"**
    *Kamu. Kode, domain, database, akun, dan dokumentasi diserahkan semua, tanpa terkunci di platform.*
@@ -195,8 +216,8 @@ linea.js/marketing/stories/
 ├── stories.js               ← teks semua bagian (diubah di sini saja)
 ├── render.js / audio.py / build.sh / combine.sh
 └── output/
-    ├── 1-tentang.mp4  2-layanan.mp4  3-karya.mp4  4-proses.mp4  5-kontak.mp4
-    └── covers/        tentang.png, layanan.png, karya.png, proses.png, kontak.png
+    ├── 1-tentang.mp4  2-layanan.mp4  3-karya.mp4  4-bedanya.mp4  5-proses.mp4  6-kontak.mp4
+    └── covers/        tentang.png, layanan.png, karya.png, bedanya.png, proses.png, kontak.png
 ```
 
 - Setiap video ber-watermark dari awal dan diakhiri animasi logo Linea.js sekali.

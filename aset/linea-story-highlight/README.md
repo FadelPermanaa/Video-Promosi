@@ -2,17 +2,18 @@
 
 > Isi dan fakta diambil dari website linea.js. Folder ini berdiri sendiri; tidak perlu repo lain untuk render ulang.
 
-Five vertical videos (1080×1920, Indonesian), **one per main idea**, each made as one continuous animation with its own soundtrack, that explain what Linea.js is, what it builds, what it has shipped, how a project starts, and how to get in touch. Each video is saved as one **highlight** on @linea.js. The brief is in [PROMPT.md](PROMPT.md).
+Six vertical videos (1080×1920, Indonesian), **one per main idea**, each made as one continuous animation with its own soundtrack, that explain what Linea.js is, what it builds, what it has shipped, how its services differ, how a project starts, and how to get in touch. Each video is saved as one **highlight** on @linea.js. The brief is in [PROMPT.md](PROMPT.md).
 
 Every visual is new: there are no screenshots of the website. The project screens are redrawn illustrations, marked "ilustrasi tampilan". All facts come from the website, and the videos show no prices.
 
 | Highlight | Video | Length | Cover |
 |---|---|---|---|
-| Tentang | `output/1-tentang.mp4` | 30 s | `output/covers/tentang.png` |
-| Layanan | `output/2-layanan.mp4` | 35 s | `output/covers/layanan.png` |
-| Karya | `output/3-karya.mp4` | 50 s | `output/covers/karya.png` |
-| Proses | `output/4-proses.mp4` | 36 s | `output/covers/proses.png` |
-| Tanya & Kontak | `output/5-kontak.mp4` | 38 s | `output/covers/kontak.png` |
+| Tentang | `output/1-tentang.mp4` | 31 s | `output/covers/tentang.png` |
+| Layanan | `output/2-layanan.mp4` | 38 s | `output/covers/layanan.png` |
+| Karya | `output/3-karya.mp4` | 52 s | `output/covers/karya.png` |
+| Bedanya Apa? | `output/4-bedanya.mp4` | 52 s | `output/covers/bedanya.png` |
+| Proses | `output/5-proses.mp4` | 38 s | `output/covers/proses.png` |
+| Tanya & Kontak | `output/6-kontak.mp4` | 40 s | `output/covers/kontak.png` |
 
 - **Under 60 seconds.** Every video fits in a single Instagram story without being split.
 - **One continuous animation.** The parts are not clips glued together. Each part lifts away, a blue panel with the Linea.js mark sweeps across, and the next part builds in. The background lines keep moving the whole time, and the counter in the label rolls from 1/4 to 2/4.

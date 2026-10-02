@@ -35,6 +35,19 @@ window.STORIES = {
       ]
     },
     {
+      "id": "bedanya", "title": "Bedanya Apa?", "icon": "split",
+      "stories": [
+        { "type": "statement", "d": 5.5, "title": "Website, booking, kasir, dashboard, web app. <em>Bedanya apa?</em>", "sub": "Gampangnya: lihat siapa yang memakainya." },
+        { "type": "service", "d": 5.5, "n": "01", "label": "Dipakai pelanggan", "icon": "food", "title": "Website F&B, <em>untuk pesan makanan</em>", "body": "Pelanggan pesan dan bayar sendiri dari HP, dari rumah atau langsung dari meja. Kamu tinggal masak.", "tags": ["pesan online", "QR meja", "QRIS"] },
+        { "type": "service", "d": 5.5, "n": "02", "label": "Dipakai pelanggan", "icon": "cal", "iconTop": 1250, "title": "Sistem booking, <em>untuk pesan jadwal</em>", "body": "Pelanggan pilih jam kosong, bayar, dan slotnya langsung terkunci. Cocok untuk lapangan, salon, grooming.", "tags": ["jadwal real-time", "bayar di muka", "member"] },
+        { "type": "service", "d": 5.5, "n": "03", "label": "Dipakai kasir", "icon": "pos", "title": "Kasir, <em>untuk karyawan</em>", "body": "Mencatat penjualan di toko: struk tercetak, stok berkurang, dan uang di laci selalu cocok.", "tags": ["di toko", "struk", "bisa offline"] },
+        { "type": "service", "d": 5.5, "n": "04", "label": "Dipakai pemilik", "icon": "dash", "title": "Dashboard, <em>untuk pemilik</em>", "body": "Bukan untuk mencatat, tapi memantau: omzet hari ini, menu terlaris, stok menipis, dari mana saja.", "tags": ["omzet", "laporan", "dari HP"] },
+        { "type": "chain", "d": 5.5, "title": "Semuanya <em>saling terhubung.</em>", "sub": "Pesanan dan booking masuk ke kasir, lalu langsung tercatat di dashboard.", "nodes": ["Pelanggan pesan", "Kasir mencatat", "Pemilik memantau"], "icons": ["cal", "pos", "dash"] },
+        { "type": "service", "d": 5.5, "n": "05", "label": "Sesuai kebutuhan", "icon": "app", "title": "Web app, <em>untuk alur yang unik</em>", "body": "Katalog, manajemen armada, sampai operasional. Kalau alur usahamu beda dari biasanya, sistemnya kami buat mengikuti alurmu.", "tags": ["custom", "tanpa install"] },
+        { "type": "cta", "d": 5.5, "title": "Bingung pilih yang mana? <em>Ceritakan usahamu.</em>", "button": "Kirim DM", "contacts": ["@linea.js", "Lineajs01@gmail.com"] }
+      ]
+    },
+    {
       "id": "proses", "title": "Proses", "icon": "loop",
       "stories": [
         { "type": "steps", "d": 6, "title": "Dari ide sampai <em>rencana jelas,</em> cuma 4 langkah.", "items": ["Kirim brief", "Dibalas dengan arah", "Ngobrol 30 menit", "Terima rencana pasti"] },

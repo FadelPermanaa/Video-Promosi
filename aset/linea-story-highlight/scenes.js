@@ -26,6 +26,8 @@ const ICONS = {
   food: I('<path d="M3 12h18a9 9 0 0 1-18 0Z"/><path d="M8 8c0-1.2 1-1.6 1-3M12 8c0-1.2 1-1.6 1-3M16 8c0-1.2 1-1.6 1-3"/>'),
   pos: I('<rect x="4" y="9" width="16" height="12" rx="2"/><path d="M7 9V3h10v6M8 13h2M12 13h2M16 13h.01M8 17h8"/>'),
   app: I('<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01" stroke-width="2.2"/><path d="M7 13h5M7 16.5h8"/>'),
+  split: I('<rect x="3" y="4" width="7.5" height="16" rx="2"/><rect x="13.5" y="4" width="7.5" height="16" rx="2"/><path d="M6.75 9v6M17.25 9h.01M17.25 12h.01M17.25 15h.01" stroke-width="2.2"/>'),
+  cal: I('<rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8.5 15l2 2 4.5-4.5"/>'),
   court: I('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M12 5v14M3 12h18"/>'),
   pill: I('<rect x="2.5" y="8" width="19" height="8" rx="4" transform="rotate(-35 12 12)"/><path d="M9.2 7.9l5.6 8.2"/>'),
   truck: I('<path d="M3 17V8h10v9M13 11h4l4 3v3h-8"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>'),
@@ -69,11 +71,11 @@ function sceneHTML(S) {
   switch (S.type) {
     case 'logo': return `<div id="mark" class="abs">${MARK}</div>` + text('', S.title, S.sub);
     case 'chain': return text('', S.title, S.sub) + `<div id="art" class="abs"><svg id="chainline" viewBox="0 0 940 400"><path id="cl" d="M135 170 H805" stroke="#2231f6" stroke-width="8" stroke-linecap="round" stroke-dasharray="4 26" fill="none"/></svg>
-      ${S.nodes.map((n, i) => `<div class="node" style="left:${i * 335}px"><div class="ic ${i === 1 ? '' : 'soft'}">${ICONS[['screen', 'server', 'db'][i]]}</div><b>${esc(n)}</b></div>`).join('')}</div>`;
+      ${S.nodes.map((n, i) => `<div class="node" style="left:${i * 335}px"><div class="ic ${i === 1 ? '' : 'soft'}">${ICONS[(S.icons || ['screen', 'server', 'db'])[i]]}</div><b>${esc(n)}</b></div>`).join('')}</div>`;
     case 'crossed': return text('', S.title, '') + `<div id="art" class="abs" style="top:860px">${S.items.map((t) => `<div class="row"><div class="ic">${ICONS.check}</div>${esc(t)}</div>`).join('')}</div>`;
     case 'stats': return text('', S.title, '') + `<div id="art" class="abs"><div class="stats">${S.stats.map(([v, l]) => `<div class="stat"><b data-v="${esc(v)}">${esc(v)}</b><span>${esc(l)}</span></div>`).join('')}</div></div>`;
     case 'intro': return text('', S.title, S.sub) + `<div id="art" class="abs" style="top:${S.cards.length > 4 ? 960 : 1010}px">${S.cards.map((t, i) => `<div class="card"><div class="ic">${ICONS[S.cardIcons[i]]}</div>${esc(t)}<em>${String(i + 1).padStart(2, '0')}</em></div>`).join('')}</div>`;
-    case 'service': return `<div class="big-n">${esc(S.n)}</div>` + text('Layanan ' + S.n, S.title, S.body, chips(S.tags)) + `<div id="sv-icon" class="abs" style="top:1180px"><div id="sv-ring"></div><div class="ic">${ICONS[S.icon]}</div></div>`;
+    case 'service': return `<div class="big-n">${esc(S.n)}</div>` + text(S.label || 'Layanan ' + S.n, S.title, S.body, chips(S.tags)) + `<div id="sv-icon" class="abs" style="top:${S.iconTop || 1180}px"><div id="sv-ring"></div><div class="ic">${ICONS[S.icon]}</div></div>`;
     case 'project': return `<div id="device" class="abs"><div class="bar"><i></i><i></i><i></i><b>${esc(S.name)}</b></div><div class="body">${mock(S.mock)}</div></div><div class="note-ill">ilustrasi tampilan</div>`
       + `<div id="text" class="abs"><span class="kind">${esc(S.kind)}</span><h1>${esc(S.name)}</h1><p>${esc(S.body)}</p>${chips(S.tags)}</div>`;
     case 'statement': return text('', S.title, S.sub) + `<svg id="dots" class="abs" viewBox="0 0 940 260"><path id="dl" d="M60 130 C 200 20, 300 240, 470 130 S 760 20, 880 130" stroke="#2231f6" stroke-width="8" fill="none" stroke-linecap="round"/>${[60, 265, 470, 675, 880].map((x) => `<g class="dot"><circle cx="${x}" cy="130" r="34" fill="#fff" stroke="#2231f6" stroke-width="8"/></g>`).join('')}</svg>`;
